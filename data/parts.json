@@ -76,18 +76,17 @@
     "discontinued": false,
     "image": ["IMAGES/CO11-0717 A.jpg", "IMAGES/CO11-0717 B.jpg"]
 },
-  {
+    {
     "id": 8,
-    "sku": "AWC-GB-009",
-    "name": "Aluminium Glazing Bead 28mm",
-    "category": "Glazing Beads",
-    "description": "Extruded aluminium glazing bead, anodized silver finish, 28mm profile. This part has been discontinued and replaced by AWC-GB-011.",
-    "tags": ["aluminium", "silver", "anodized", "28mm", "extruded"],
-    "compatibility": "Atlantic Alu Series",
-    "stock": "out_of_stock",
-    "discontinued": true,
-    "image": "https://placehold.co/600x600/1a1a2e/888888?text=DISCONTINUED"
-  },
+    "sku": "CO11-0201-085",
+    "name": "DUAL ARM Powder Coated LH",
+    "category": "Operators",
+    "tags": ["Hardware", "Casement", "Silver", "Lefthand"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
+    "discontinued": false,
+    "image": ["IMAGES/CO11-0201-085.jpg"]
+},
   {
     "id": 9,
     "sku": "AWC-WS-009",
