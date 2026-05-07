@@ -10,18 +10,17 @@
     "discontinued": false,
     "image": ["IMAGES/CO11-0505-085 A.jpg", "IMAGES/CO11-0505-085 B.jpg"]
 },
-  {
-    "id": 3,
-    "sku": "AWC-HW-012",
-    "name": "Casement Espagnolette Lock",
-    "category": "Locks & Handles",
-    "description": "Multi-point espagnolette locking system for outward-opening casement windows. Includes all fixing hardware and striker plates.",
-    "tags": ["lock", "espagnolette", "multipoint", "casement", "security"],
-    "compatibility": "Atlantic 400 Series",
-    "stock": "low_stock",
+    {
+    "id": 2,
+    "sku": "CO11-0506-085",
+    "name": "RH Bracket Facemount / Casement",
+    "category": "Operators Accessories",
+    "tags": ["Hardware", "Righthand", "Casement", "Bracket", "Silver", "27mm"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
     "discontinued": false,
-    "image": "https://placehold.co/600x600/1b2838/c8d6e5?text=AWC-HW-012"
-  },
+    "image": ["IMAGES/CO11-0506-085 A.jpg", "IMAGES/CO11-0506-085 B.jpg"]
+},
   {
     "id": 4,
     "sku": "AWC-HN-007",
