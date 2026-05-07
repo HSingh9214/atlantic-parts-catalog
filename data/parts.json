@@ -87,30 +87,28 @@
     "discontinued": false,
     "image": ["IMAGES/CO11-0201-085.jpg"]
 },
-  {
+    {
     "id": 9,
-    "sku": "AWC-WS-009",
-    "name": "Pile Weather Strip 7mm",
-    "category": "Weather Seals",
-    "description": "Self-adhesive pile (brush) weather strip, 7mm height x 5mm width. For sliding sash windows and door perimeters.",
-    "tags": ["pile", "brush", "weather-strip", "self-adhesive", "sliding"],
-    "compatibility": "Atlantic Slider Series, Door Series",
+    "sku": "CO11-0202-085",
+    "name": "DUAL ARM Powder Coated RH",
+    "category": "Operators",
+    "tags": ["Hardware", "Casement", "Silver", "Righthand"],
+    "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
-    "image": "https://placehold.co/600x600/1a2e1a/a8e2a8?text=AWC-WS-009"
-  },
-  {
+    "image": ["IMAGES/CO11-0202-085.jpg"]
+},
+    {
     "id": 10,
-    "sku": "AWC-LH-004",
-    "name": "Cockspur Window Handle",
-    "category": "Locks & Handles",
-    "description": "White PVC cockspur handle for older style casement windows. Right-hand opening, 40mm cockspur height. Includes frame striker.",
-    "tags": ["cockspur", "handle", "white", "pvc", "casement", "right-hand"],
-    "compatibility": "Legacy Series, Pre-2010 Atlantic Casements",
-    "stock": "low_stock",
+    "sku": "CO11-0301-085",
+    "name": "DYAD OPERATOR Powder Coated LH",
+    "category": "Operators",
+    "tags": ["Hardware", "Casement", "Silver", "Lefthand", "Dyad"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
     "discontinued": false,
-    "image": "https://placehold.co/600x600/2e1a1a/e2a8a8?text=AWC-LH-004"
-  },
+    "image": ["IMAGES/CO11-0301-085.jpg"]
+},
   {
     "id": 11,
     "sku": "AWC-FC-008",
