@@ -1,15 +1,25 @@
 [
   {
-    "id": 1,
+    "id": 1.1,
     "sku": "CO11-0505-085",
     "name": "LH Bracket Facemount / Casement",
-    "category": "Operators Accessories",
+    "category": "Operators SS",
     "tags": ["Hardware", "Lefthand", "Casement", "Bracket", "Silver", "27mm"],
     "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
-    "image":["IMAGES/CO11-0505-085 A.jpg", "IMAGES/CO11-0505-085 B.jpg"]
-    "default_image_index": 0
+    "image": "IMAGES/CO11-0505-085 A.jpg"
+},
+ {
+    "id": 1.2,
+    "sku": "CO11-0505-085",
+    "name": "LH Bracket Facemount / Casement",
+    "category": "Operators SS",
+    "tags": ["Hardware", "Lefthand", "Casement", "Bracket", "27mm", "Silver"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
+    "discontinued": false,
+    "image": "IMAGES/CO11-0505-085 B.jpg"
 },
   {
     "id": 3,
