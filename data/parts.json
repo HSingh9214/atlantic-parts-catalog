@@ -9,6 +9,7 @@
     "stock": "in_stock",
     "discontinued": false,
     "image":["IMAGES/CO11-0505-085 A.jpg", "IMAGES/CO11-0505-085 B.jpg"]
+    "default_image_index": 0
 },
   {
     "id": 3,
