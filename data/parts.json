@@ -10,17 +10,6 @@
     "discontinued": false,
     "image": ["IMAGES/CO11-0505-085 A.jpg", "IMAGES/CO11-0505-085 B.jpg"]
 },
- {
-    "id": 1.2,
-    "sku": "CO11-0505-085",
-    "name": "LH Bracket Facemount / Casement",
-    "category": "Operators Accessories",
-    "tags": ["Hardware", "Lefthand", "Casement", "Bracket", "27mm", "Silver"],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": "IMAGES/CO11-0505-085 B.jpg"
-},
   {
     "id": 3,
     "sku": "AWC-HW-012",
