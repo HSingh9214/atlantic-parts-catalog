@@ -32,6 +32,17 @@
     "discontinued": false,
     "image": ["IMAGES/CO11-0510 A.jpg", "IMAGES/CO11-0510 B.jpg"]
   },
+    {
+    "id": 4,
+    "sku": "CO11-0555-085",
+    "name": "LH Bracket Facemount / Casement SS",
+    "category": "Operators Accessories",
+    "tags": ["Hardware", "Casement", "Sash Bracket", "Stainless steet","27mm"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
+    "discontinued": false,
+    "image": ["IMAGES/CO11-0555-085 A.jpg", "IMAGES/CO11-0555-085 B.jpg"]
+},
   {
     "id": 5,
     "sku": "AWC-FC-022",
