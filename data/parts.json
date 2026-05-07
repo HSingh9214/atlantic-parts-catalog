@@ -67,16 +67,15 @@
 },
   {
     "id": 7,
-    "sku": "AWC-SP-018",
-    "name": "Sash Lift Handle Pair",
-    "category": "Sash Parts",
-    "description": "Brushed chrome sash lift handles for vertical sliding windows. Solid brass core, chrome plated finish. Sold as matched pair with fixing screws.",
-    "tags": ["sash", "lift", "chrome", "sliding", "handle", "brass"],
-    "compatibility": "Atlantic Slider Series",
+    "sku": "CO11-0717",
+    "name": "AWNING Track SS",
+    "category": "Operators Accessories",
+    "tags": ["Hardware", "Casement", "Track", "Stainless Steel", "Small"],
+    "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
-    "image": "https://placehold.co/600x600/2d132c/ee4540?text=AWC-SP-018"
-  },
+    "image": ["IMAGES/CO11-0717 A.jpg", "IMAGES/CO11-0717 B.jpg"]
+},
   {
     "id": 8,
     "sku": "AWC-GB-009",
