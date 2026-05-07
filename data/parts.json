@@ -1,28 +1,26 @@
 [
   {
-    "id": 1,
-    "sku": "AWC-GB-001",
-    "name": "PVC Glazing Bead 22mm",
-    "category": "Glazing Beads",
-    "description": "Standard white PVC glazing bead for casement windows, 22mm profile. Snap-fit installation, compatible with Atlantic Series 400 and 500 frame systems.",
-    "tags": ["pvc", "white", "casement", "22mm", "snap-fit"],
-    "compatibility": "Atlantic Series 400, 500",
+    "id": 1.1,
+    "sku": "CO11-0505-085",
+    "name": "LH Bracket Facemount / Casement",
+    "category": "Operators SS",
+    "tags": ["Hardware", "Lefthand", "Casement", "Bracket", "Silver", "27mm"],
+    "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
-    "image": "1"
-  },
-  {
-    "id": 111,
-    "sku": "AWC-WS-003",
-    "name": "EPDM Weather Seal 7mm",
-    "category": "Weather Seals",
-    "description": "Black EPDM rubber weather seal, 7mm co-extruded profile, UV and ozone resistant. Suitable for all Atlantic window and door series.",
-    "tags": ["epdm", "black", "seal", "7mm", "uv-resistant", "rubber"],
-    "compatibility": "All Series",
+    "image": "IMAGES/CO11-0505-085 A.jpg"
+},
+ {
+    "id": 1.2,
+    "sku": "CO11-0505-085",
+    "name": "LH Bracket Facemount / Casement",
+    "category": "Operators SS",
+    "tags": ["Hardware", "Lefthand", "Casement", "Bracket", "27mm", "Silver"],
+    "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
-    "image": "https://placehold.co/600x600/0d1b2a/a8d5e2?text=AWC-WS-003"
-  },
+    "image": "IMAGES/CO11-0505-085 B.jpg"
+},
   {
     "id": 3,
     "sku": "AWC-HW-012",
