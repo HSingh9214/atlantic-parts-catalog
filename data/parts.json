@@ -22,16 +22,15 @@
     "image": ["IMAGES/CO11-0506-085 A.jpg", "IMAGES/CO11-0506-085 B.jpg"]
 },
   {
-    "id": 4,
-    "sku": "AWC-HN-007",
-    "name": "Friction Hinge 24 inch",
-    "category": "Hinges & Arms",
-    "description": "Top-hung friction stay hinge, 24-inch arm. White powder coated steel, adjustable friction setting. Supplied as single hinge with fixings.",
-    "tags": ["hinge", "friction", "white", "24inch", "top-hung", "powder-coat"],
-    "compatibility": "Atlantic 300, 400 Series",
+    "id": 3,
+    "sku": "CO11-0510",
+    "name": "Narrow Awning Connector",
+    "category": "Operators Accessories",
+    "tags": ["Hardware", "Casement", "Awning", "Stainless Steel", "Connector],
+    "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
-    "image": "https://placehold.co/600x600/16213e/e2b96f?text=AWC-HN-007"
+    "image": ["IMAGES/CO11-0510 A.jpg", "IMAGES/CO11-0510 B.jpg"]
   },
   {
     "id": 5,
