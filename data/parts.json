@@ -37,24 +37,23 @@
     "sku": "CO11-0555-085",
     "name": "LH Bracket Facemount / Casement SS",
     "category": "Operators Accessories",
-    "tags": ["Hardware", "Casement", "Sash Bracket", "Stainless steet","27mm"],
+    "tags": ["Hardware", "Casement", "Sash Bracket", "Lefthand", "Stainless steet","27mm"],
     "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0555-085 A.jpg", "IMAGES/CO11-0555-085 B.jpg"]
 },
-  {
+   {
     "id": 5,
-    "sku": "AWC-FC-022",
-    "name": "Tilt & Turn Corner Drive",
-    "category": "Frame Components",
-    "description": "Stainless steel corner drive unit for tilt & turn window hardware systems. 90-degree gear box, suits 14mm euro groove.",
-    "tags": ["corner-drive", "tilt-turn", "stainless", "hardware", "euro-groove"],
-    "compatibility": "Atlantic TT Series",
-    "stock": "out_of_stock",
+    "sku": "CO11-0556-085",
+    "name": "RH Bracket Facemount / Casement SS",
+    "category": "Operators Accessories",
+    "tags": ["Hardware", "Casement", "Sash Bracket", "Righthand", "Stainless steet","27mm"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
     "discontinued": false,
-    "image": "https://placehold.co/600x600/0f3460/e94560?text=AWC-FC-022"
-  },
+    "image": ["IMAGES/CO11-0556-085 A.jpg", "IMAGES/CO11-0556-085 B.jpg"]
+},
   {
     "id": 6,
     "sku": "AWC-GL-044",
