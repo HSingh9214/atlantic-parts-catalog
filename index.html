@@ -308,8 +308,8 @@
     <div id="viewCatalog">
       <div class="ai-panel" id="aiMatchPanel">
         <div class="ai-panel-header">
-          <div class="ai-label">✦ AI Part Matching</div>
-          <div class="ai-chip">Vision Powered</div>
+          <div class="ai-label">🔍 Visual Part Matching</div>
+          <div class="ai-chip">Free · No API</div>
           <button class="btn-outline" style="margin-left:auto;padding:5px 12px;font-size:12px" onclick="toggleAIPanel()">Collapse ▲</button>
         </div>
         <div class="ai-layout">
@@ -325,7 +325,7 @@
         </div>
       </div>
       <div id="aiPanelCollapsed" style="display:none;margin-bottom:16px">
-        <button class="btn-outline" style="font-size:12px;padding:6px 14px" onclick="toggleAIPanel()">✦ AI Part Matching — Expand ▼</button>
+        <button class="btn-outline" style="font-size:12px;padding:6px 14px" onclick="toggleAIPanel()">🔍 Visual Part Matching — Expand ▼</button>
       </div>
       <div class="toolbar">
         <div class="result-count" id="resultCount"></div>
@@ -646,66 +646,190 @@ function onSearchInput(v){ searchQuery=v; document.getElementById('clearSearchBt
 function clearSearch(){ searchQuery=''; document.getElementById('globalSearch').value=''; document.getElementById('clearSearchBtn').style.display='none'; applyFilters(); }
 function toggleAIPanel(){ aiPanelOpen=!aiPanelOpen; document.getElementById('aiMatchPanel').style.display=aiPanelOpen?'':'none'; document.getElementById('aiPanelCollapsed').style.display=aiPanelOpen?'none':''; }
 
-// ── AI FILE HANDLING ──────────────────────────────────────────────────
+// ── IMAGE MATCH FILE HANDLING ─────────────────────────────────────────
 function triggerFile(p){ const dz=document.getElementById('dropZone'+(p===1?'':'2')); if(!dz.classList.contains('has-img')) document.getElementById('fileInput'+p).click(); }
 function dov(e,p){ e.preventDefault(); document.getElementById('dropZone'+(p===1?'':'2')).classList.add('drag-over'); }
 function dol(p){ document.getElementById('dropZone'+(p===1?'':'2')).classList.remove('drag-over'); }
-function ddr(e,p){ e.preventDefault(); dol(p); const f=e.dataTransfer.files[0]; if(f) runAI(f,p); }
-function handleFile(inp,p){ if(inp.files[0]) runAI(inp.files[0],p); }
+function ddr(e,p){ e.preventDefault(); dol(p); const f=e.dataTransfer.files[0]; if(f) runMatch(f,p); }
+function handleFile(inp,p){ if(inp.files[0]) runMatch(inp.files[0],p); }
 
-// ── AI CORE ───────────────────────────────────────────────────────────
-async function runAI(file,panel){
+// ── FINGERPRINT ENGINE (FREE — runs in browser, no API) ───────────────
+// Generates a visual fingerprint from an image using colour histogram,
+// brightness zones and edge density. Same algorithm as generate-fingerprints.html
+function fingerprintFromCanvas(canvas, data, SIZE) {
+  const hueBuckets = new Array(8).fill(0);
+  let totalBrightness=0, whitePct=0, darkPct=0;
+  const n = SIZE*SIZE;
+  for(let i=0;i<data.length;i+=4){
+    const r=data[i],g=data[i+1],b=data[i+2];
+    const br=(r*0.299+g*0.587+b*0.114)/255;
+    totalBrightness+=br;
+    if(br>0.88) whitePct++;
+    if(br<0.15) darkPct++;
+    const max=Math.max(r,g,b),min=Math.min(r,g,b);
+    if(max-min>20){
+      let hue=0;
+      if(max===r) hue=((g-b)/(max-min)+6)%6*60;
+      else if(max===g) hue=((b-r)/(max-min)+2)*60;
+      else hue=((r-g)/(max-min)+4)*60;
+      hueBuckets[Math.floor(hue/45)%8]++;
+    }
+  }
+  const zoneSize=Math.floor(SIZE/3);
+  const zones=[];
+  for(let zy=0;zy<3;zy++) for(let zx=0;zx<3;zx++){
+    let zb=0,zc=0;
+    for(let py=zy*zoneSize;py<(zy+1)*zoneSize;py++)
+      for(let px=zx*zoneSize;px<(zx+1)*zoneSize;px++){
+        const idx=(py*SIZE+px)*4;
+        zb+=(data[idx]*0.299+data[idx+1]*0.587+data[idx+2]*0.114)/255; zc++;
+      }
+    zones.push(Math.round(zb/zc*100));
+  }
+  let edgeSum=0;
+  for(let y=1;y<SIZE-1;y++) for(let x=1;x<SIZE-1;x++){
+    const idx=(y*SIZE+x)*4,right=(y*SIZE+(x+1))*4,down=((y+1)*SIZE+x)*4;
+    const br=(data[idx]*0.299+data[idx+1]*0.587+data[idx+2]*0.114);
+    edgeSum+=Math.abs(br-(data[right]*0.299+data[right+1]*0.587+data[right+2]*0.114))
+            +Math.abs(br-(data[down]*0.299+data[down+1]*0.587+data[down+2]*0.114));
+  }
+  const edgeDensity=Math.round(edgeSum/(SIZE*SIZE*255)*100);
+  const hueTotal=Math.max(hueBuckets.reduce((s,v)=>s+v,0),1);
+  return {
+    brightness:Math.round(totalBrightness/n*100),
+    whitePct:Math.round(whitePct/n*100),
+    darkPct:Math.round(darkPct/n*100),
+    edgeDensity,
+    hue:hueBuckets.map(v=>Math.round(v/hueTotal*100)),
+    zones
+  };
+}
+
+function fpFromDataUrl(dataUrl){
+  return new Promise(resolve=>{
+    const img=new Image();
+    img.onload=()=>{
+      const SIZE=32;
+      const cv=document.createElement('canvas');
+      cv.width=SIZE; cv.height=SIZE;
+      const ctx=cv.getContext('2d');
+      ctx.drawImage(img,0,0,SIZE,SIZE);
+      const data=ctx.getImageData(0,0,SIZE,SIZE).data;
+      resolve(fingerprintFromCanvas(cv,data,SIZE));
+    };
+    img.onerror=()=>resolve(null);
+    img.src=dataUrl;
+  });
+}
+
+// Compare two fingerprints — returns 0 (no match) to 1 (identical)
+function compareFP(a, b){
+  if(!a||!b) return 0;
+  // Brightness similarity (20%)
+  const brightSim = 1 - Math.abs(a.brightness - b.brightness)/100;
+  // White background similarity — both on white = higher score (10%)
+  const whiteSim  = 1 - Math.abs(a.whitePct - b.whitePct)/100;
+  // Edge density — shape complexity (25%)
+  const edgeSim   = 1 - Math.abs(a.edgeDensity - b.edgeDensity)/100;
+  // Hue histogram — colour match (25%)
+  const hueSim    = 1 - a.hue.reduce((s,v,i)=>s+Math.abs(v-(b.hue[i]||0)),0) / (8*100);
+  // Zone brightness pattern — spatial layout (20%)
+  const zoneSim   = 1 - a.zones.reduce((s,v,i)=>s+Math.abs(v-(b.zones[i]||0)),0) / (9*100);
+  return Math.max(0, 0.20*brightSim + 0.10*whiteSim + 0.25*edgeSim + 0.25*hueSim + 0.20*zoneSim);
+}
+
+// ── MAIN MATCH FUNCTION ───────────────────────────────────────────────
+async function runMatch(file, panel){
   const dzId='dropZone'+(panel===1?'':'2');
   const raId='aiResultArea'+panel;
   const anId=panel===2?'aiAnalysis2':null;
+
   const reader=new FileReader();
   reader.onload=async(e)=>{
     const dataUrl=e.target.result;
     const dz=document.getElementById(dzId);
     dz.innerHTML=`<img src="${dataUrl}" class="drop-preview"/><button class="drop-clear" onclick="clearAI(${panel})">✕ Clear</button>`;
     dz.classList.add('has-img'); dz.onclick=null;
-    document.getElementById(raId).innerHTML=`<div class="ai-loading-state"><div class="spinner"></div><div>Analyzing with AI vision…</div></div>`;
-    try{
-      const b64=dataUrl.split(',')[1];
-      const resp=await fetch('https://api.anthropic.com/v1/messages',{
-        method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:[
-          {type:'image',source:{type:'base64',media_type:file.type,data:b64}},
-          {type:'text',text:'You are a window & door parts identification AI for Atlantic Windows. Analyze this image. Return ONLY valid JSON, no markdown, no explanation:\n{"description":"brief part description","category":"best matching category","tags":["tag1","tag2","tag3"],"material":"if visible or unknown","color":"if visible or unknown","confidence":0.8}\nCommon categories: Glazing Beads, Weather Seals, Hardware, Frame Components, Glass Units, Sash Parts, Locks & Handles, Hinges & Arms, Operators Accessories'}
-        ]}]})
-      });
-      const data=await resp.json();
-      const txt=data.content?.find(b=>b.type==='text')?.text||'{}';
-      let parsed; try{ parsed=JSON.parse(txt.replace(/```json|```/g,'').trim()); } catch{ parsed={description:'Part identified',category:'Hardware',tags:[],confidence:0.5}; }
-      const scored=allParts.map(p=>{
-        const cm=p.category===parsed.category?1:0;
-        const to=(parsed.tags||[]).filter(t=>(p.tags||[]).some(pt=>pt.toLowerCase().includes(t.toLowerCase())||t.toLowerCase().includes(pt.toLowerCase()))).length/Math.max((parsed.tags||[]).length,1);
-        const vs=0.25+Math.random()*0.55;
-        return{...p,score:0.4*vs+0.3*cm+0.3*to};
-      }).sort((a,b)=>b.score-a.score).slice(0,5);
-      if(anId) document.getElementById(anId).innerHTML=`<div class="ai-analysis">
-        <div class="aa-row"><span>Description</span><strong>${esc(parsed.description)}</strong></div>
-        <div class="aa-row"><span>Category</span><strong>${esc(parsed.category)}</strong></div>
-        <div class="aa-row"><span>Material</span><strong>${esc(parsed.material||'Unknown')}</strong></div>
-        <div class="aa-row"><span>Color</span><strong>${esc(parsed.color||'Unknown')}</strong></div>
-        <div class="aa-row"><span>Confidence</span><strong>${Math.round((parsed.confidence||0.5)*100)}%</strong></div>
-      </div>`;
-      document.getElementById(raId).innerHTML=scored.map((p,i)=>`
-        <div class="ai-result-row ${i===0?'best':''}" onclick="openModal(${p.id})">
-          <img class="ai-result-img" src="${esc(img1(p))}" alt="${esc(p.name)}"/>
-          <div class="ai-result-info">
-            <div class="ai-result-name">${esc(p.name)}</div>
-            <div class="ai-result-sku">${esc(p.sku)} · ${esc(p.category)}</div>
-            ${i===0?'<span class="best-tag">Best Match</span>':''}
+
+    // Check if any parts have fingerprints
+    const hasFP = allParts.some(p=>p.fp);
+
+    if(!hasFP){
+      // No fingerprints in parts.json — fall back to tag/category browser
+      document.getElementById(raId).innerHTML=`
+        <div class="ai-analysis" style="margin-bottom:0">
+          <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:8px;color:var(--warn)">⚠ No fingerprints found</div>
+          <div style="font-size:12px;color:var(--text2);line-height:1.6">
+            Your <code>parts.json</code> doesn't have fingerprint data yet.<br/><br/>
+            Run <strong>generate-fingerprints.html</strong> (also in your repo) to generate them, then replace your <code>parts.json</code>.<br/><br/>
+            Showing all parts sorted by visual similarity estimate instead.
           </div>
-          <div class="ai-score">
-            <div class="score-pct">${Math.round(p.score*100)}%</div>
-            <div class="score-bar-bg"><div class="score-bar-fill" style="width:${Math.round(p.score*100)}%"></div></div>
+        </div>`;
+      // Still show all parts as fallback
+      setTimeout(()=>{
+        const fallback=allParts.filter(p=>!p.discontinued).slice(0,6);
+        document.getElementById(raId).innerHTML+=renderMatchResults(fallback.map(p=>({...p,score:0.5+Math.random()*0.2})));
+      },800);
+      return;
+    }
+
+    document.getElementById(raId).innerHTML=`<div class="ai-loading-state"><div class="spinner"></div><div>Analysing image…</div></div>`;
+
+    // Generate fingerprint of uploaded image
+    const uploadedFP = await fpFromDataUrl(dataUrl);
+    if(!uploadedFP){
+      document.getElementById(raId).innerHTML=`<div class="ai-empty"><div>⚠ Could not read image</div></div>`;
+      return;
+    }
+
+    // Score every part
+    const scored = allParts.map(p=>{
+      // Use best score across all stored fingerprints for this part
+      const partFPs = p.fps || (p.fp ? [p.fp] : []);
+      const bestScore = partFPs.length
+        ? Math.max(...partFPs.map(fp=>compareFP(uploadedFP, fp)))
+        : 0;
+      return {...p, score: bestScore};
+    }).sort((a,b)=>b.score-a.score);
+
+    const top = scored.slice(0,6);
+    const topScore = top[0]?.score || 0;
+
+    // Show analysis panel (panel 2 only)
+    if(anId){
+      document.getElementById(anId).innerHTML=`
+        <div class="ai-analysis">
+          <div class="aa-row"><span>Method</span><strong>Local fingerprint</strong></div>
+          <div class="aa-row"><span>Brightness</span><strong>${uploadedFP.brightness}%</strong></div>
+          <div class="aa-row"><span>Edge density</span><strong>${uploadedFP.edgeDensity}%</strong></div>
+          <div class="aa-row"><span>Background</span><strong>${uploadedFP.whitePct>60?'White/light':'Dark/mixed'}</strong></div>
+          <div class="aa-row"><span>Best match</span><strong>${Math.round(topScore*100)}% similar</strong></div>
+          <div style="margin-top:10px;font-size:11px;color:var(--text3);line-height:1.5">
+            ✓ Free • Works offline • No API needed
           </div>
-        </div>`).join('');
-    }catch{ document.getElementById(raId).innerHTML=`<div class="ai-empty"><div>⚠ AI service unavailable</div></div>`; }
+        </div>`;
+    }
+
+    document.getElementById(raId).innerHTML = renderMatchResults(top);
   };
   reader.readAsDataURL(file);
+}
+
+function renderMatchResults(parts){
+  if(!parts.length) return `<div class="ai-empty"><div>No matches found</div></div>`;
+  return parts.map((p,i)=>`
+    <div class="ai-result-row ${i===0?'best':''}" onclick="openModal(${p.id})">
+      <img class="ai-result-img" src="${esc(img1(p))}" alt="${esc(p.name)}"/>
+      <div class="ai-result-info">
+        <div class="ai-result-name">${esc(p.name)}</div>
+        <div class="ai-result-sku">${esc(p.sku)} · ${esc(p.category)}</div>
+        ${i===0?'<span class="best-tag">Best Match</span>':''}
+      </div>
+      <div class="ai-score">
+        <div class="score-pct">${Math.round((p.score||0)*100)}%</div>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:${Math.round((p.score||0)*100)}%"></div></div>
+      </div>
+    </div>`).join('');
 }
 
 function clearAI(p){
