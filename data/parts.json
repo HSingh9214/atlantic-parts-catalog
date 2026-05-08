@@ -111,26 +111,113 @@
 },
   {
     "id": 11,
-    "sku": "AWC-FC-008",
-    "name": "Sill End Cap White",
-    "category": "Frame Components",
-    "description": "White PVC sill end cap, suits 150mm deep window sills. Snap-on fit, UV stabilised PVC. Sold individually.",
-    "tags": ["sill", "end-cap", "white", "pvc", "150mm", "snap-on"],
-    "compatibility": "Atlantic 300, 400, 500, 600 Series",
+    "sku": "CO11-0302-085",
+    "name": "DYAD OPERATOR Powder Coated RH",
+    "category": "Operators",
+    "tags": ["Hardware", "Casement", "Silver", "Righthand", "Dyad"],
+    "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
-    "image": "https://placehold.co/600x600/1e2e1a/c8e2a8?text=AWC-FC-008"
-  },
+    "image": ["IMAGES/CO11-0302-085.jpg"]
+},
+  
   {
     "id": 12,
-    "sku": "AWC-HN-015",
-    "name": "Flag Hinge 100mm Stainless",
-    "category": "Hinges & Arms",
-    "description": "100mm stainless steel flag hinge for heavy-duty aluminium doors. Grade 316 marine stainless, adjustable in 3 axes. Sold as pair.",
-    "tags": ["flag-hinge", "stainless", "316", "door", "100mm", "adjustable"],
-    "compatibility": "Atlantic Door Series, Aluminium",
+    "sku": "CO11-0403-085",
+    "name": "NARROW AWNING OPERATOR (REGULAR)",
+    "category": "Operators",
+    "tags": ["Hardware", "Casement", "Silver", "Awning", "Narrow"],
+    "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
-    "image": "https://placehold.co/600x600/1a1e2e/a8c8e2?text=AWC-HN-015"
-  }
+    "image": ["IMAGES/CO11-0403-085.jpg"]
+},
+    {
+    "id": 13,
+    "sku": "CO11-0409-085",
+    "name": "NARROW AWNING OPERATOR (REGULAR)",
+    "category": "Operators",
+    "tags": ["Hardware", "Casement", "Awning", "Scissor Arm"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
+    "discontinued": false,
+    "image": ["IMAGES/CO11-0409-085.jpg"]
+}, 
+  {
+    "id": 14,
+    "sku": "CO11-0251-085",
+    "name": "DUAL ARM SS LH",
+    "category": "Operators SS",
+    "tags": ["Hardware", "Casement", "Lefthand", "Stainless Steel", "Dual Arm"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
+    "discontinued": false,
+    "image": ["IMAGES/CO11-0251-085.jpg"]
+},
+  {
+    "id": 15,
+    "sku": "CO11-0252-085",
+    "name": "DUAL ARM SS RH",
+    "category": "Operators SS",
+    "tags": ["Hardware", "Casement", "Righthand", "Stainless Steel", "Dual Arm"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
+    "discontinued": false,
+    "image": ["IMAGES/CO11-0251-085.jpg"]
+},
+  {
+    "id": 16,
+    "sku": "CO11-0351-085",
+    "name": "DYAD OPERATOR SS LH",
+    "category": "Operators SS",
+    "tags": ["Hardware", "Casement", "Lefthand", "Stainless Steel", "Dyad"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
+    "discontinued": false,
+    "image": ["IMAGES/CO11-0351-085.jpg"]
+},
+  {
+    "id": 17,
+    "sku": "CO11-0352-085",
+    "name": "DYAD OPERATOR SS RH",
+    "category": "Operators SS",
+    "tags": ["Hardware", "Casement", "Righthand", "Stainless Steel", "Dyad"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
+    "discontinued": false,
+    "image": ["IMAGES/CO11-0352-085.jpg"]
+},
+  {
+    "id": 18,
+    "sku": "CO11-0459-085",
+    "name": "AWNING SS OPERATOR",
+    "category": "Operators SS",
+    "tags": ["Hardware", "Casement", "Stainless Steel", "Awning Scissor Arm"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
+    "discontinued": false,
+    "image": ["IMAGES/CO11-0459-085.jpg"]
+},
+  {
+    "id": 19,
+    "sku": "CO11-0453-085",
+    "name": "NARROW AWNING SS OPERATOR",
+    "category": "Operators SS",
+    "tags": ["Hardware", "Casement", "Stainless Steel", "Awning Operator", "Narrow"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
+    "discontinued": false,
+    "image": ["IMAGES/CO11-0453-085.jpg"]
+},
+  {
+    "id": 20,
+    "sku": "CL02-2054-000",
+    "name": "Casement Strike White",
+    "category": "Strike & Guide",
+    "tags": ["Hardware", "Casement", "White"],
+    "compatibility": "Casement",
+    "stock": "in_stock",
+    "discontinued": false,
+    "image": ["IMAGES/CL02-2054-000.jpg"]
+},
 ]
