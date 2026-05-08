@@ -646,96 +646,47 @@ function onSearchInput(v){ searchQuery=v; document.getElementById('clearSearchBt
 function clearSearch(){ searchQuery=''; document.getElementById('globalSearch').value=''; document.getElementById('clearSearchBtn').style.display='none'; applyFilters(); }
 function toggleAIPanel(){ aiPanelOpen=!aiPanelOpen; document.getElementById('aiMatchPanel').style.display=aiPanelOpen?'':'none'; document.getElementById('aiPanelCollapsed').style.display=aiPanelOpen?'none':''; }
 
-// ── IMAGE MATCH FILE HANDLING ─────────────────────────────────────────
+// ── CONFIG ────────────────────────────────────────────────────────────
+const HF_SPACE = 'https://chotasingh-aw-clip-matcher.hf.space';
+
+// ── FILE HANDLING ─────────────────────────────────────────────────────
 function triggerFile(p){ const dz=document.getElementById('dropZone'+(p===1?'':'2')); if(!dz.classList.contains('has-img')) document.getElementById('fileInput'+p).click(); }
 function dov(e,p){ e.preventDefault(); document.getElementById('dropZone'+(p===1?'':'2')).classList.add('drag-over'); }
 function dol(p){ document.getElementById('dropZone'+(p===1?'':'2')).classList.remove('drag-over'); }
 function ddr(e,p){ e.preventDefault(); dol(p); const f=e.dataTransfer.files[0]; if(f) runMatch(f,p); }
 function handleFile(inp,p){ if(inp.files[0]) runMatch(inp.files[0],p); }
 
-// ── FINGERPRINT ENGINE (FREE — runs in browser, no API) ───────────────
-// Generates a visual fingerprint from an image using colour histogram,
-// brightness zones and edge density. Same algorithm as generate-fingerprints.html
-function fingerprintFromCanvas(canvas, data, SIZE) {
-  const hueBuckets = new Array(8).fill(0);
-  let totalBrightness=0, whitePct=0, darkPct=0;
-  const n = SIZE*SIZE;
-  for(let i=0;i<data.length;i+=4){
-    const r=data[i],g=data[i+1],b=data[i+2];
-    const br=(r*0.299+g*0.587+b*0.114)/255;
-    totalBrightness+=br;
-    if(br>0.88) whitePct++;
-    if(br<0.15) darkPct++;
-    const max=Math.max(r,g,b),min=Math.min(r,g,b);
-    if(max-min>20){
-      let hue=0;
-      if(max===r) hue=((g-b)/(max-min)+6)%6*60;
-      else if(max===g) hue=((b-r)/(max-min)+2)*60;
-      else hue=((r-g)/(max-min)+4)*60;
-      hueBuckets[Math.floor(hue/45)%8]++;
-    }
-  }
-  const zoneSize=Math.floor(SIZE/3);
-  const zones=[];
-  for(let zy=0;zy<3;zy++) for(let zx=0;zx<3;zx++){
-    let zb=0,zc=0;
-    for(let py=zy*zoneSize;py<(zy+1)*zoneSize;py++)
-      for(let px=zx*zoneSize;px<(zx+1)*zoneSize;px++){
-        const idx=(py*SIZE+px)*4;
-        zb+=(data[idx]*0.299+data[idx+1]*0.587+data[idx+2]*0.114)/255; zc++;
-      }
-    zones.push(Math.round(zb/zc*100));
-  }
-  let edgeSum=0;
-  for(let y=1;y<SIZE-1;y++) for(let x=1;x<SIZE-1;x++){
-    const idx=(y*SIZE+x)*4,right=(y*SIZE+(x+1))*4,down=((y+1)*SIZE+x)*4;
-    const br=(data[idx]*0.299+data[idx+1]*0.587+data[idx+2]*0.114);
-    edgeSum+=Math.abs(br-(data[right]*0.299+data[right+1]*0.587+data[right+2]*0.114))
-            +Math.abs(br-(data[down]*0.299+data[down+1]*0.587+data[down+2]*0.114));
-  }
-  const edgeDensity=Math.round(edgeSum/(SIZE*SIZE*255)*100);
-  const hueTotal=Math.max(hueBuckets.reduce((s,v)=>s+v,0),1);
-  return {
-    brightness:Math.round(totalBrightness/n*100),
-    whitePct:Math.round(whitePct/n*100),
-    darkPct:Math.round(darkPct/n*100),
-    edgeDensity,
-    hue:hueBuckets.map(v=>Math.round(v/hueTotal*100)),
-    zones
-  };
-}
+// ── CLIP EMBEDDING via HUGGING FACE ───────────────────────────────────
+async function getClipEmbedding(dataUrl, mimeType) {
+  const res = await fetch(dataUrl);
+  const blob = await res.blob();
 
-function fpFromDataUrl(dataUrl){
-  return new Promise(resolve=>{
-    const img=new Image();
-    img.onload=()=>{
-      const SIZE=32;
-      const cv=document.createElement('canvas');
-      cv.width=SIZE; cv.height=SIZE;
-      const ctx=cv.getContext('2d');
-      ctx.drawImage(img,0,0,SIZE,SIZE);
-      const data=ctx.getImageData(0,0,SIZE,SIZE).data;
-      resolve(fingerprintFromCanvas(cv,data,SIZE));
-    };
-    img.onerror=()=>resolve(null);
-    img.src=dataUrl;
+  // Upload image to HF Space
+  const formData = new FormData();
+  formData.append('files', blob, 'image.jpg');
+  const uploadResp = await fetch(`${HF_SPACE}/upload`, { method:'POST', body:formData });
+  if(!uploadResp.ok) throw new Error('Upload failed: ' + uploadResp.status);
+  const uploadData = await uploadResp.json();
+  const filePath = uploadData[0];
+
+  // Get CLIP embedding
+  const predictResp = await fetch(`${HF_SPACE}/run/predict`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ data: [{ path: filePath }] })
   });
+  if(!predictResp.ok) throw new Error('Predict failed: ' + predictResp.status);
+  const predictData = await predictResp.json();
+  const result = JSON.parse(predictData.data[0]);
+  if(!result.embedding) throw new Error('No embedding returned');
+  return result.embedding;
 }
 
-// Compare two fingerprints — returns 0 (no match) to 1 (identical)
-function compareFP(a, b){
-  if(!a||!b) return 0;
-  // Brightness similarity (20%)
-  const brightSim = 1 - Math.abs(a.brightness - b.brightness)/100;
-  // White background similarity — both on white = higher score (10%)
-  const whiteSim  = 1 - Math.abs(a.whitePct - b.whitePct)/100;
-  // Edge density — shape complexity (25%)
-  const edgeSim   = 1 - Math.abs(a.edgeDensity - b.edgeDensity)/100;
-  // Hue histogram — colour match (25%)
-  const hueSim    = 1 - a.hue.reduce((s,v,i)=>s+Math.abs(v-(b.hue[i]||0)),0) / (8*100);
-  // Zone brightness pattern — spatial layout (20%)
-  const zoneSim   = 1 - a.zones.reduce((s,v,i)=>s+Math.abs(v-(b.zones[i]||0)),0) / (9*100);
-  return Math.max(0, 0.20*brightSim + 0.10*whiteSim + 0.25*edgeSim + 0.25*hueSim + 0.20*zoneSim);
+// ── COSINE SIMILARITY ─────────────────────────────────────────────────
+function cosine(a, b){
+  let dot=0, ma=0, mb=0;
+  for(let i=0;i<a.length;i++){ dot+=a[i]*b[i]; ma+=a[i]*a[i]; mb+=b[i]*b[i]; }
+  return dot/(Math.sqrt(ma)*Math.sqrt(mb));
 }
 
 // ── MAIN MATCH FUNCTION ───────────────────────────────────────────────
@@ -751,66 +702,60 @@ async function runMatch(file, panel){
     dz.innerHTML=`<img src="${dataUrl}" class="drop-preview"/><button class="drop-clear" onclick="clearAI(${panel})">✕ Clear</button>`;
     dz.classList.add('has-img'); dz.onclick=null;
 
-    // Check if any parts have fingerprints
-    const hasFP = allParts.some(p=>p.fp);
+    // Check if parts have CLIP embeddings
+    const hasClip = allParts.some(p=>p.clip);
 
-    if(!hasFP){
-      // No fingerprints in parts.json — fall back to tag/category browser
+    if(!hasClip){
       document.getElementById(raId).innerHTML=`
-        <div class="ai-analysis" style="margin-bottom:0">
-          <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:8px;color:var(--warn)">⚠ No fingerprints found</div>
+        <div class="ai-analysis" style="margin-bottom:12px">
+          <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:6px;color:var(--warn)">⚠ No CLIP embeddings found</div>
           <div style="font-size:12px;color:var(--text2);line-height:1.6">
-            Your <code>parts.json</code> doesn't have fingerprint data yet.<br/><br/>
-            Run <strong>generate-fingerprints.html</strong> (also in your repo) to generate them, then replace your <code>parts.json</code>.<br/><br/>
-            Showing all parts sorted by visual similarity estimate instead.
+            Run <strong>generate-fingerprints.html</strong> from your GitHub Pages URL to generate embeddings, then replace <code>parts.json</code>.
           </div>
         </div>`;
-      // Still show all parts as fallback
-      setTimeout(()=>{
-        const fallback=allParts.filter(p=>!p.discontinued).slice(0,6);
-        document.getElementById(raId).innerHTML+=renderMatchResults(fallback.map(p=>({...p,score:0.5+Math.random()*0.2})));
-      },800);
       return;
     }
 
-    document.getElementById(raId).innerHTML=`<div class="ai-loading-state"><div class="spinner"></div><div>Analysing image…</div></div>`;
+    document.getElementById(raId).innerHTML=`<div class="ai-loading-state"><div class="spinner"></div><div>Getting CLIP embedding…</div></div>`;
 
-    // Generate fingerprint of uploaded image
-    const uploadedFP = await fpFromDataUrl(dataUrl);
-    if(!uploadedFP){
-      document.getElementById(raId).innerHTML=`<div class="ai-empty"><div>⚠ Could not read image</div></div>`;
-      return;
-    }
+    try{
+      const queryEmb = await getClipEmbedding(dataUrl, file.type);
 
-    // Score every part
-    const scored = allParts.map(p=>{
-      // Use best score across all stored fingerprints for this part
-      const partFPs = p.fps || (p.fp ? [p.fp] : []);
-      const bestScore = partFPs.length
-        ? Math.max(...partFPs.map(fp=>compareFP(uploadedFP, fp)))
-        : 0;
-      return {...p, score: bestScore};
-    }).sort((a,b)=>b.score-a.score);
+      // Score every part using cosine similarity
+      const scored = allParts.map(p=>{
+        const allEmbs = p.clips || (p.clip ? [p.clip] : []);
+        const best = allEmbs.length
+          ? Math.max(...allEmbs.map(emb=>cosine(queryEmb, emb)))
+          : 0;
+        return {...p, score: Math.max(0, (best+1)/2) }; // normalise -1→1 to 0→1
+      }).sort((a,b)=>b.score-a.score);
 
-    const top = scored.slice(0,6);
-    const topScore = top[0]?.score || 0;
+      const top = scored.slice(0,6);
+      const topScore = top[0]?.score||0;
 
-    // Show analysis panel (panel 2 only)
-    if(anId){
-      document.getElementById(anId).innerHTML=`
-        <div class="ai-analysis">
-          <div class="aa-row"><span>Method</span><strong>Local fingerprint</strong></div>
-          <div class="aa-row"><span>Brightness</span><strong>${uploadedFP.brightness}%</strong></div>
-          <div class="aa-row"><span>Edge density</span><strong>${uploadedFP.edgeDensity}%</strong></div>
-          <div class="aa-row"><span>Background</span><strong>${uploadedFP.whitePct>60?'White/light':'Dark/mixed'}</strong></div>
-          <div class="aa-row"><span>Best match</span><strong>${Math.round(topScore*100)}% similar</strong></div>
-          <div style="margin-top:10px;font-size:11px;color:var(--text3);line-height:1.5">
-            ✓ Free • Works offline • No API needed
-          </div>
+      if(anId){
+        document.getElementById(anId).innerHTML=`
+          <div class="ai-analysis">
+            <div class="aa-row"><span>Method</span><strong>CLIP ViT-B/32</strong></div>
+            <div class="aa-row"><span>Embedding</span><strong>512-dim vector</strong></div>
+            <div class="aa-row"><span>Best match</span><strong>${Math.round(topScore*100)}% similar</strong></div>
+            <div style="margin-top:8px;font-size:11px;color:var(--text3);line-height:1.5">
+              ✓ Works across angles & lighting<br/>✓ Free via Hugging Face
+            </div>
+          </div>`;
+      }
+
+      document.getElementById(raId).innerHTML = renderMatchResults(top);
+
+    }catch(err){
+      console.error(err);
+      document.getElementById(raId).innerHTML=`
+        <div class="ai-empty">
+          <div style="font-size:20px">⚠</div>
+          <div style="font-weight:600;margin-bottom:4px">Matching unavailable</div>
+          <div style="font-size:12px;color:var(--text3)">${err.message.includes('fetch')?'Could not reach Hugging Face Space. Check it is still running.':err.message}</div>
         </div>`;
     }
-
-    document.getElementById(raId).innerHTML = renderMatchResults(top);
   };
   reader.readAsDataURL(file);
 }
