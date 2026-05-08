@@ -4,17 +4,7 @@
     "sku": "CO11-0505-085",
     "name": "LH Bracket Facemount / Casement",
     "category": "Operators Accessories",
-    "tags": [
-      "Hardware",
-      "Lefthand",
-      "Casement",
-      "Bracket",
-      "Silver",[
-  {
-    "id": 1,
-    "sku": "CO11-0505-085",
-    "name": "LH Bracket Facemount / Casement",
-    "category": "Operators Accessories",
+    "description": "",
     "tags": [
       "Hardware",
       "Lefthand",
@@ -29,89 +19,6 @@
     "image": [
       "IMAGES/CO11-0505-085 A.jpg",
       "IMAGES/CO11-0505-085 B.jpg"
-    ],
-    "fp": {
-      "brightness": 92,
-      "whitePct": 86,
-      "darkPct": 0,
-      "edgeDensity": 5,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        100,
-        95,
-        100,
-        98,
-        54,
-        100,
-        98,
-        74,
-        99
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 92,
-        "whitePct": 86,
-        "darkPct": 0,
-        "edgeDensity": 5,
-        "hue": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          95,
-          100,
-          98,
-          54,
-          100,
-          98,
-          74,
-          99
-        ]
-      },
-      {
-        "brightness": 88,
-        "whitePct": 80,
-        "darkPct": 0,
-        "edgeDensity": 6,
-        "hue": [
-          100,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          98,
-          90,
-          100,
-          61,
-          68,
-          97,
-          71,
-          91
-        ]
-      }
     ]
   },
   {
@@ -119,6 +26,7 @@
     "sku": "CO11-0506-085",
     "name": "RH Bracket Facemount / Casement",
     "category": "Operators Accessories",
+    "description": "",
     "tags": [
       "Hardware",
       "Righthand",
@@ -133,89 +41,6 @@
     "image": [
       "IMAGES/CO11-0506-085 A.jpg",
       "IMAGES/CO11-0506-085 B.jpg"
-    ],
-    "fp": {
-      "brightness": 93,
-      "whitePct": 86,
-      "darkPct": 0,
-      "edgeDensity": 4,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        100,
-        86,
-        100,
-        100,
-        64,
-        100,
-        100,
-        82,
-        100
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 93,
-        "whitePct": 86,
-        "darkPct": 0,
-        "edgeDensity": 4,
-        "hue": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          86,
-          100,
-          100,
-          64,
-          100,
-          100,
-          82,
-          100
-        ]
-      },
-      {
-        "brightness": 89,
-        "whitePct": 78,
-        "darkPct": 0,
-        "edgeDensity": 5,
-        "hue": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          98,
-          81,
-          100,
-          99,
-          50,
-          97,
-          100,
-          72,
-          90
-        ]
-      }
     ]
   },
   {
@@ -223,6 +48,7 @@
     "sku": "CO11-0510",
     "name": "Narrow Awning Connector",
     "category": "Operators Accessories",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -236,89 +62,6 @@
     "image": [
       "IMAGES/CO11-0510 A.jpg",
       "IMAGES/CO11-0510 B.jpg"
-    ],
-    "fp": {
-      "brightness": 88,
-      "whitePct": 79,
-      "darkPct": 0,
-      "edgeDensity": 8,
-      "hue": [
-        36,
-        64,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        98,
-        63,
-        100,
-        100,
-        55,
-        100,
-        100,
-        64,
-        100
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 88,
-        "whitePct": 79,
-        "darkPct": 0,
-        "edgeDensity": 8,
-        "hue": [
-          36,
-          64,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          98,
-          63,
-          100,
-          100,
-          55,
-          100,
-          100,
-          64,
-          100
-        ]
-      },
-      {
-        "brightness": 93,
-        "whitePct": 86,
-        "darkPct": 0,
-        "edgeDensity": 5,
-        "hue": [
-          0,
-          100,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          89,
-          98,
-          100,
-          64,
-          94,
-          100,
-          86,
-          98
-        ]
-      }
     ]
   },
   {
@@ -326,6 +69,7 @@
     "sku": "CO11-0555-085",
     "name": "LH Bracket Facemount / Casement SS",
     "category": "Operators Accessories",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -340,89 +84,6 @@
     "image": [
       "IMAGES/CO11-0555-085 A.jpg",
       "IMAGES/CO11-0555-085 B.jpg"
-    ],
-    "fp": {
-      "brightness": 90,
-      "whitePct": 81,
-      "darkPct": 0,
-      "edgeDensity": 6,
-      "hue": [
-        89,
-        11,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        97,
-        98,
-        100,
-        87,
-        73,
-        100,
-        87,
-        61,
-        100
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 90,
-        "whitePct": 81,
-        "darkPct": 0,
-        "edgeDensity": 6,
-        "hue": [
-          89,
-          11,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          97,
-          98,
-          100,
-          87,
-          73,
-          100,
-          87,
-          61,
-          100
-        ]
-      },
-      {
-        "brightness": 83,
-        "whitePct": 75,
-        "darkPct": 8,
-        "edgeDensity": 8,
-        "hue": [
-          94,
-          6,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          85,
-          100,
-          90,
-          33,
-          100,
-          67,
-          50,
-          100
-        ]
-      }
     ]
   },
   {
@@ -430,6 +91,7 @@
     "sku": "CO11-0556-085",
     "name": "RH Bracket Facemount / Casement SS",
     "category": "Operators Accessories",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -444,89 +106,6 @@
     "image": [
       "IMAGES/CO11-0556-085 A.jpg",
       "IMAGES/CO11-0556-085 B.jpg"
-    ],
-    "fp": {
-      "brightness": 91,
-      "whitePct": 82,
-      "darkPct": 0,
-      "edgeDensity": 8,
-      "hue": [
-        15,
-        85,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        100,
-        82,
-        100,
-        100,
-        67,
-        100,
-        96,
-        68,
-        98
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 91,
-        "whitePct": 82,
-        "darkPct": 0,
-        "edgeDensity": 8,
-        "hue": [
-          15,
-          85,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          82,
-          100,
-          100,
-          67,
-          100,
-          96,
-          68,
-          98
-        ]
-      },
-      {
-        "brightness": 83,
-        "whitePct": 68,
-        "darkPct": 0,
-        "edgeDensity": 8,
-        "hue": [
-          81,
-          19,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          99,
-          74,
-          100,
-          100,
-          46,
-          90,
-          100,
-          53,
-          69
-        ]
-      }
     ]
   },
   {
@@ -534,6 +113,7 @@
     "sku": "CO11-0702",
     "name": "Track Assembly Facemount (Large Dual)",
     "category": "Operators Accessories",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -547,89 +127,6 @@
     "image": [
       "IMAGES/CO11-0702 A.jpg",
       "IMAGES/CO11-0702 B.jpg"
-    ],
-    "fp": {
-      "brightness": 91,
-      "whitePct": 80,
-      "darkPct": 0,
-      "edgeDensity": 6,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        100,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        100,
-        100,
-        100,
-        79,
-        68,
-        67,
-        96,
-        99,
-        100
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 91,
-        "whitePct": 80,
-        "darkPct": 0,
-        "edgeDensity": 6,
-        "hue": [
-          0,
-          0,
-          0,
-          0,
-          100,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          100,
-          100,
-          79,
-          68,
-          67,
-          96,
-          99,
-          100
-        ]
-      },
-      {
-        "brightness": 91,
-        "whitePct": 79,
-        "darkPct": 0,
-        "edgeDensity": 5,
-        "hue": [
-          0,
-          0,
-          0,
-          0,
-          100,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          100,
-          100,
-          83,
-          79,
-          75,
-          88,
-          89,
-          92
-        ]
-      }
     ]
   },
   {
@@ -637,6 +134,7 @@
     "sku": "CO11-0717",
     "name": "AWNING Track SS",
     "category": "Operators Accessories",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -650,89 +148,6 @@
     "image": [
       "IMAGES/CO11-0717 A.jpg",
       "IMAGES/CO11-0717 B.jpg"
-    ],
-    "fp": {
-      "brightness": 92,
-      "whitePct": 83,
-      "darkPct": 0,
-      "edgeDensity": 6,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        100,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        99,
-        100,
-        97,
-        73,
-        79,
-        68,
-        98,
-        100,
-        100
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 92,
-        "whitePct": 83,
-        "darkPct": 0,
-        "edgeDensity": 6,
-        "hue": [
-          0,
-          0,
-          0,
-          0,
-          100,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          99,
-          100,
-          97,
-          73,
-          79,
-          68,
-          98,
-          100,
-          100
-        ]
-      },
-      {
-        "brightness": 91,
-        "whitePct": 80,
-        "darkPct": 0,
-        "edgeDensity": 7,
-        "hue": [
-          30,
-          70,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          100,
-          100,
-          74,
-          76,
-          69,
-          98,
-          98,
-          95
-        ]
-      }
     ]
   },
   {
@@ -740,6 +155,7 @@
     "sku": "CO11-0201-085",
     "name": "DUAL ARM Powder Coated LH",
     "category": "Operators",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -751,40 +167,14 @@
     "discontinued": false,
     "image": [
       "IMAGES/CO11-0201-085.jpg"
-    ],
-    "fp": {
-      "brightness": 83,
-      "whitePct": 70,
-      "darkPct": 0,
-      "edgeDensity": 11,
-      "hue": [
-        50,
-        50,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        84,
-        49,
-        70,
-        88,
-        69,
-        87,
-        100,
-        83,
-        100
-      ]
-    }
+    ]
   },
   {
     "id": 9,
     "sku": "CO11-0202-085",
     "name": "DUAL ARM Powder Coated RH",
     "category": "Operators",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -796,40 +186,14 @@
     "discontinued": false,
     "image": [
       "IMAGES/CO11-0202-085.jpg"
-    ],
-    "fp": {
-      "brightness": 82,
-      "whitePct": 70,
-      "darkPct": 1,
-      "edgeDensity": 11,
-      "hue": [
-        100,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        82,
-        48,
-        63,
-        100,
-        80,
-        80,
-        100,
-        71,
-        97
-      ]
-    }
+    ]
   },
   {
     "id": 10,
     "sku": "CO11-0301-085",
     "name": "DYAD OPERATOR Powder Coated LH",
     "category": "Operators",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -842,40 +206,14 @@
     "discontinued": false,
     "image": [
       "IMAGES/CO11-0301-085.jpg"
-    ],
-    "fp": {
-      "brightness": 85,
-      "whitePct": 74,
-      "darkPct": 1,
-      "edgeDensity": 9,
-      "hue": [
-        100,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        79,
-        43,
-        66,
-        100,
-        99,
-        79,
-        100,
-        93,
-        88
-      ]
-    }
+    ]
   },
   {
     "id": 11,
     "sku": "CO11-0302-085",
     "name": "DYAD OPERATOR Powder Coated RH",
     "category": "Operators",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -888,40 +226,14 @@
     "discontinued": false,
     "image": [
       "IMAGES/CO11-0302-085.jpg"
-    ],
-    "fp": {
-      "brightness": 86,
-      "whitePct": 76,
-      "darkPct": 2,
-      "edgeDensity": 9,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        95,
-        48,
-        51,
-        98,
-        82,
-        100,
-        100,
-        85,
-        100
-      ]
-    }
+    ]
   },
   {
     "id": 12,
     "sku": "CO11-0403-085",
     "name": "NARROW AWNING OPERATOR (REGULAR)",
     "category": "Operators",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -934,40 +246,14 @@
     "discontinued": false,
     "image": [
       "IMAGES/CO11-0403-085.jpg"
-    ],
-    "fp": {
-      "brightness": 84,
-      "whitePct": 72,
-      "darkPct": 1,
-      "edgeDensity": 10,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        73,
-        55,
-        77,
-        85,
-        77,
-        100,
-        71,
-        96,
-        100
-      ]
-    }
+    ]
   },
   {
     "id": 13,
     "sku": "CO11-0409-085",
     "name": "NARROW AWNING OPERATOR (REGULAR)",
     "category": "Operators",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -979,40 +265,14 @@
     "discontinued": false,
     "image": [
       "IMAGES/CO11-0409-085.jpg"
-    ],
-    "fp": {
-      "brightness": 84,
-      "whitePct": 74,
-      "darkPct": 2,
-      "edgeDensity": 14,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        96,
-        100,
-        88,
-        55,
-        69,
-        96,
-        59,
-        90,
-        85
-      ]
-    }
+    ]
   },
   {
     "id": 14,
     "sku": "CO11-0251-085",
     "name": "DUAL ARM SS LH",
     "category": "Operators SS",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -1025,40 +285,14 @@
     "discontinued": false,
     "image": [
       "IMAGES/CO11-0251-085.jpg"
-    ],
-    "fp": {
-      "brightness": 15,
-      "whitePct": 1,
-      "darkPct": 70,
-      "edgeDensity": 11,
-      "hue": [
-        72,
-        28,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        10,
-        35,
-        19,
-        18,
-        25,
-        7,
-        11,
-        19,
-        4
-      ]
-    }
+    ]
   },
   {
     "id": 15,
     "sku": "CO11-0252-085",
     "name": "DUAL ARM SS RH",
     "category": "Operators SS",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -1071,40 +305,14 @@
     "discontinued": false,
     "image": [
       "IMAGES/CO11-0251-085.jpg"
-    ],
-    "fp": {
-      "brightness": 15,
-      "whitePct": 1,
-      "darkPct": 70,
-      "edgeDensity": 11,
-      "hue": [
-        72,
-        28,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        10,
-        35,
-        19,
-        18,
-        25,
-        7,
-        11,
-        19,
-        4
-      ]
-    }
+    ]
   },
   {
     "id": 16,
     "sku": "CO11-0351-085",
     "name": "DYAD OPERATOR SS LH",
     "category": "Operators SS",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -1117,40 +325,14 @@
     "discontinued": false,
     "image": [
       "IMAGES/CO11-0351-085.jpg"
-    ],
-    "fp": {
-      "brightness": 88,
-      "whitePct": 74,
-      "darkPct": 0,
-      "edgeDensity": 9,
-      "hue": [
-        100,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        89,
-        73,
-        75,
-        95,
-        86,
-        82,
-        100,
-        88,
-        89
-      ]
-    }
+    ]
   },
   {
     "id": 17,
     "sku": "CO11-0352-085",
     "name": "DYAD OPERATOR SS RH",
     "category": "Operators SS",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -1163,40 +345,14 @@
     "discontinued": false,
     "image": [
       "IMAGES/CO11-0352-085.jpg"
-    ],
-    "fp": {
-      "brightness": 90,
-      "whitePct": 80,
-      "darkPct": 0,
-      "edgeDensity": 7,
-      "hue": [
-        86,
-        14,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        91,
-        73,
-        75,
-        92,
-        88,
-        94,
-        94,
-        94,
-        100
-      ]
-    }
+    ]
   },
   {
     "id": 18,
     "sku": "CO11-0459-085",
     "name": "AWNING SS OPERATOR",
     "category": "Operators SS",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -1208,40 +364,14 @@
     "discontinued": false,
     "image": [
       "IMAGES/CO11-0459-085.jpg"
-    ],
-    "fp": {
-      "brightness": 89,
-      "whitePct": 74,
-      "darkPct": 0,
-      "edgeDensity": 10,
-      "hue": [
-        67,
-        33,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        88,
-        66,
-        81,
-        100,
-        80,
-        100,
-        93,
-        93,
-        90
-      ]
-    }
+    ]
   },
   {
     "id": 19,
     "sku": "CO11-0453-085",
     "name": "NARROW AWNING SS OPERATOR",
     "category": "Operators SS",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -1254,40 +384,14 @@
     "discontinued": false,
     "image": [
       "IMAGES/CO11-0453-085.jpg"
-    ],
-    "fp": {
-      "brightness": 17,
-      "whitePct": 2,
-      "darkPct": 67,
-      "edgeDensity": 12,
-      "hue": [
-        43,
-        57,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        27,
-        29,
-        21,
-        9,
-        38,
-        0,
-        0,
-        42,
-        0
-      ]
-    }
+    ]
   },
   {
     "id": 20,
     "sku": "CL02-2054-000",
     "name": "Casement Strike White",
     "category": "Strike & Guide",
+    "description": "",
     "tags": [
       "Hardware",
       "Casement",
@@ -1297,1341 +401,7 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": [
-      "IMAGES/CL02-2054-000.jpg.jpeg"
-    ],
-    "fp": {
-      "brightness": 95,
-      "whitePct": 87,
-      "darkPct": 0,
-      "edgeDensity": 4,
-      "hue": [
-        66,
-        34,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        98,
-        95,
-        95,
-        93,
-        91,
-        92,
-        97,
-        93,
-        94
-      ]
-    }
-  }
-]
-      "27mm"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0505-085 A.jpg",
-      "IMAGES/CO11-0505-085 B.jpg"
-    ],
-    "fp": {
-      "brightness": 92,
-      "whitePct": 86,
-      "darkPct": 0,
-      "edgeDensity": 5,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        100,
-        95,
-        100,
-        98,
-        54,
-        100,
-        98,
-        74,
-        99
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 92,
-        "whitePct": 86,
-        "darkPct": 0,
-        "edgeDensity": 5,
-        "hue": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          95,
-          100,
-          98,
-          54,
-          100,
-          98,
-          74,
-          99
-        ]
-      },
-      {
-        "brightness": 88,
-        "whitePct": 80,
-        "darkPct": 0,
-        "edgeDensity": 6,
-        "hue": [
-          100,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          98,
-          90,
-          100,
-          61,
-          68,
-          97,
-          71,
-          91
-        ]
-      }
+      "IMAGES/CL02-2054-000.jpg"
     ]
-  },
-  {
-    "id": 2,
-    "sku": "CO11-0506-085",
-    "name": "RH Bracket Facemount / Casement",
-    "category": "Operators Accessories",
-    "tags": [
-      "Hardware",
-      "Righthand",
-      "Casement",
-      "Bracket",
-      "Silver",
-      "27mm"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0506-085 A.jpg",
-      "IMAGES/CO11-0506-085 B.jpg"
-    ],
-    "fp": {
-      "brightness": 93,
-      "whitePct": 86,
-      "darkPct": 0,
-      "edgeDensity": 4,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        100,
-        86,
-        100,
-        100,
-        64,
-        100,
-        100,
-        82,
-        100
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 93,
-        "whitePct": 86,
-        "darkPct": 0,
-        "edgeDensity": 4,
-        "hue": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          86,
-          100,
-          100,
-          64,
-          100,
-          100,
-          82,
-          100
-        ]
-      },
-      {
-        "brightness": 89,
-        "whitePct": 78,
-        "darkPct": 0,
-        "edgeDensity": 5,
-        "hue": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          98,
-          81,
-          100,
-          99,
-          50,
-          97,
-          100,
-          72,
-          90
-        ]
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "sku": "CO11-0510",
-    "name": "Narrow Awning Connector",
-    "category": "Operators Accessories",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Awning",
-      "Stainless Steel",
-      "Connector"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0510 A.jpg",
-      "IMAGES/CO11-0510 B.jpg"
-    ],
-    "fp": {
-      "brightness": 88,
-      "whitePct": 79,
-      "darkPct": 0,
-      "edgeDensity": 8,
-      "hue": [
-        36,
-        64,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        98,
-        63,
-        100,
-        100,
-        55,
-        100,
-        100,
-        64,
-        100
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 88,
-        "whitePct": 79,
-        "darkPct": 0,
-        "edgeDensity": 8,
-        "hue": [
-          36,
-          64,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          98,
-          63,
-          100,
-          100,
-          55,
-          100,
-          100,
-          64,
-          100
-        ]
-      },
-      {
-        "brightness": 93,
-        "whitePct": 86,
-        "darkPct": 0,
-        "edgeDensity": 5,
-        "hue": [
-          0,
-          100,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          89,
-          98,
-          100,
-          64,
-          94,
-          100,
-          86,
-          98
-        ]
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "sku": "CO11-0555-085",
-    "name": "LH Bracket Facemount / Casement SS",
-    "category": "Operators Accessories",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Sash Bracket",
-      "Lefthand",
-      "Stainless Steel",
-      "27mm"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0555-085 A.jpg",
-      "IMAGES/CO11-0555-085 B.jpg"
-    ],
-    "fp": {
-      "brightness": 90,
-      "whitePct": 81,
-      "darkPct": 0,
-      "edgeDensity": 6,
-      "hue": [
-        90,
-        10,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        97,
-        98,
-        100,
-        87,
-        73,
-        100,
-        87,
-        61,
-        100
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 90,
-        "whitePct": 81,
-        "darkPct": 0,
-        "edgeDensity": 6,
-        "hue": [
-          90,
-          10,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          97,
-          98,
-          100,
-          87,
-          73,
-          100,
-          87,
-          61,
-          100
-        ]
-      },
-      {
-        "brightness": 83,
-        "whitePct": 75,
-        "darkPct": 8,
-        "edgeDensity": 8,
-        "hue": [
-          92,
-          8,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          85,
-          100,
-          90,
-          33,
-          100,
-          67,
-          50,
-          100
-        ]
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "sku": "CO11-0556-085",
-    "name": "RH Bracket Facemount / Casement SS",
-    "category": "Operators Accessories",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Sash Bracket",
-      "Righthand",
-      "Stainless Steel",
-      "27mm"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0556-085 A.jpg",
-      "IMAGES/CO11-0556-085 B.jpg"
-    ],
-    "fp": {
-      "brightness": 91,
-      "whitePct": 82,
-      "darkPct": 0,
-      "edgeDensity": 8,
-      "hue": [
-        18,
-        82,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        100,
-        82,
-        100,
-        100,
-        67,
-        100,
-        96,
-        68,
-        98
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 91,
-        "whitePct": 82,
-        "darkPct": 0,
-        "edgeDensity": 8,
-        "hue": [
-          18,
-          82,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          82,
-          100,
-          100,
-          67,
-          100,
-          96,
-          68,
-          98
-        ]
-      },
-      {
-        "brightness": 83,
-        "whitePct": 68,
-        "darkPct": 0,
-        "edgeDensity": 8,
-        "hue": [
-          88,
-          13,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          99,
-          74,
-          100,
-          100,
-          46,
-          90,
-          100,
-          53,
-          69
-        ]
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "sku": "CO11-0702",
-    "name": "Track Assembly Facemount (Large Dual)",
-    "category": "Operators Accessories",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Track Assembly",
-      "Aluminum",
-      "14.5 Extruded Face"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0702 A.jpg",
-      "IMAGES/CO11-0702 B.jpg"
-    ],
-    "fp": {
-      "brightness": 91,
-      "whitePct": 80,
-      "darkPct": 0,
-      "edgeDensity": 7,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        100,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        100,
-        100,
-        100,
-        79,
-        68,
-        67,
-        96,
-        99,
-        100
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 91,
-        "whitePct": 80,
-        "darkPct": 0,
-        "edgeDensity": 7,
-        "hue": [
-          0,
-          0,
-          0,
-          0,
-          100,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          100,
-          100,
-          79,
-          68,
-          67,
-          96,
-          99,
-          100
-        ]
-      },
-      {
-        "brightness": 91,
-        "whitePct": 79,
-        "darkPct": 0,
-        "edgeDensity": 5,
-        "hue": [
-          0,
-          8,
-          0,
-          0,
-          92,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          100,
-          100,
-          83,
-          79,
-          75,
-          88,
-          89,
-          92
-        ]
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "sku": "CO11-0717",
-    "name": "AWNING Track SS",
-    "category": "Operators Accessories",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Track",
-      "Stainless Steel",
-      "Small"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0717 A.jpg",
-      "IMAGES/CO11-0717 B.jpg"
-    ],
-    "fp": {
-      "brightness": 92,
-      "whitePct": 83,
-      "darkPct": 0,
-      "edgeDensity": 6,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        100,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        99,
-        100,
-        97,
-        73,
-        79,
-        68,
-        98,
-        100,
-        100
-      ]
-    },
-    "fps": [
-      {
-        "brightness": 92,
-        "whitePct": 83,
-        "darkPct": 0,
-        "edgeDensity": 6,
-        "hue": [
-          0,
-          0,
-          0,
-          0,
-          100,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          99,
-          100,
-          97,
-          73,
-          79,
-          68,
-          98,
-          100,
-          100
-        ]
-      },
-      {
-        "brightness": 91,
-        "whitePct": 80,
-        "darkPct": 0,
-        "edgeDensity": 7,
-        "hue": [
-          30,
-          70,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "zones": [
-          100,
-          100,
-          100,
-          74,
-          76,
-          69,
-          98,
-          98,
-          95
-        ]
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "sku": "CO11-0201-085",
-    "name": "DUAL ARM Powder Coated LH",
-    "category": "Operators",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Silver",
-      "Lefthand"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0201-085.jpg"
-    ],
-    "fp": {
-      "brightness": 83,
-      "whitePct": 70,
-      "darkPct": 0,
-      "edgeDensity": 11,
-      "hue": [
-        50,
-        50,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        84,
-        49,
-        70,
-        88,
-        69,
-        87,
-        100,
-        83,
-        100
-      ]
-    }
-  },
-  {
-    "id": 9,
-    "sku": "CO11-0202-085",
-    "name": "DUAL ARM Powder Coated RH",
-    "category": "Operators",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Silver",
-      "Righthand"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0202-085.jpg"
-    ],
-    "fp": {
-      "brightness": 82,
-      "whitePct": 70,
-      "darkPct": 1,
-      "edgeDensity": 11,
-      "hue": [
-        100,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        82,
-        48,
-        63,
-        100,
-        80,
-        80,
-        100,
-        71,
-        97
-      ]
-    }
-  },
-  {
-    "id": 10,
-    "sku": "CO11-0301-085",
-    "name": "DYAD OPERATOR Powder Coated LH",
-    "category": "Operators",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Silver",
-      "Lefthand",
-      "Dyad"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0301-085.jpg"
-    ],
-    "fp": {
-      "brightness": 85,
-      "whitePct": 74,
-      "darkPct": 1,
-      "edgeDensity": 9,
-      "hue": [
-        91,
-        9,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        79,
-        43,
-        66,
-        100,
-        99,
-        79,
-        100,
-        93,
-        88
-      ]
-    }
-  },
-  {
-    "id": 11,
-    "sku": "CO11-0302-085",
-    "name": "DYAD OPERATOR Powder Coated RH",
-    "category": "Operators",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Silver",
-      "Righthand",
-      "Dyad"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0302-085.jpg"
-    ],
-    "fp": {
-      "brightness": 86,
-      "whitePct": 76,
-      "darkPct": 2,
-      "edgeDensity": 9,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        95,
-        48,
-        51,
-        98,
-        81,
-        100,
-        100,
-        85,
-        100
-      ]
-    }
-  },
-  {
-    "id": 12,
-    "sku": "CO11-0403-085",
-    "name": "NARROW AWNING OPERATOR (REGULAR)",
-    "category": "Operators",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Silver",
-      "Awning",
-      "Narrow"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0403-085.jpg"
-    ],
-    "fp": {
-      "brightness": 84,
-      "whitePct": 72,
-      "darkPct": 1,
-      "edgeDensity": 10,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        73,
-        55,
-        77,
-        85,
-        77,
-        100,
-        71,
-        96,
-        100
-      ]
-    }
-  },
-  {
-    "id": 13,
-    "sku": "CO11-0409-085",
-    "name": "NARROW AWNING OPERATOR (REGULAR)",
-    "category": "Operators",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Awning",
-      "Scissor Arm"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0409-085.jpg"
-    ],
-    "fp": {
-      "brightness": 84,
-      "whitePct": 74,
-      "darkPct": 2,
-      "edgeDensity": 14,
-      "hue": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        96,
-        100,
-        88,
-        55,
-        69,
-        96,
-        59,
-        90,
-        85
-      ]
-    }
-  },
-  {
-    "id": 14,
-    "sku": "CO11-0251-085",
-    "name": "DUAL ARM SS LH",
-    "category": "Operators SS",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Lefthand",
-      "Stainless Steel",
-      "Dual Arm"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0251-085.jpg"
-    ],
-    "fp": {
-      "brightness": 15,
-      "whitePct": 1,
-      "darkPct": 70,
-      "edgeDensity": 11,
-      "hue": [
-        72,
-        28,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        10,
-        35,
-        19,
-        18,
-        25,
-        7,
-        11,
-        19,
-        4
-      ]
-    }
-  },
-  {
-    "id": 15,
-    "sku": "CO11-0252-085",
-    "name": "DUAL ARM SS RH",
-    "category": "Operators SS",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Righthand",
-      "Stainless Steel",
-      "Dual Arm"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0251-085.jpg"
-    ],
-    "fp": {
-      "brightness": 15,
-      "whitePct": 1,
-      "darkPct": 70,
-      "edgeDensity": 11,
-      "hue": [
-        72,
-        28,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        10,
-        35,
-        19,
-        18,
-        25,
-        7,
-        11,
-        19,
-        4
-      ]
-    }
-  },
-  {
-    "id": 16,
-    "sku": "CO11-0351-085",
-    "name": "DYAD OPERATOR SS LH",
-    "category": "Operators SS",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Lefthand",
-      "Stainless Steel",
-      "Dyad"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0351-085.jpg"
-    ],
-    "fp": {
-      "brightness": 88,
-      "whitePct": 74,
-      "darkPct": 0,
-      "edgeDensity": 9,
-      "hue": [
-        100,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        89,
-        73,
-        75,
-        95,
-        86,
-        82,
-        100,
-        88,
-        89
-      ]
-    }
-  },
-  {
-    "id": 17,
-    "sku": "CO11-0352-085",
-    "name": "DYAD OPERATOR SS RH",
-    "category": "Operators SS",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Righthand",
-      "Stainless Steel",
-      "Dyad"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0352-085.jpg"
-    ],
-    "fp": {
-      "brightness": 90,
-      "whitePct": 80,
-      "darkPct": 0,
-      "edgeDensity": 7,
-      "hue": [
-        91,
-        9,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        91,
-        73,
-        75,
-        92,
-        88,
-        94,
-        94,
-        94,
-        100
-      ]
-    }
-  },
-  {
-    "id": 18,
-    "sku": "CO11-0459-085",
-    "name": "AWNING SS OPERATOR",
-    "category": "Operators SS",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Stainless Steel",
-      "Awning Scissor Arm"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0459-085.jpg"
-    ],
-    "fp": {
-      "brightness": 89,
-      "whitePct": 74,
-      "darkPct": 0,
-      "edgeDensity": 10,
-      "hue": [
-        65,
-        35,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        88,
-        66,
-        81,
-        100,
-        80,
-        100,
-        93,
-        93,
-        90
-      ]
-    }
-  },
-  {
-    "id": 19,
-    "sku": "CO11-0453-085",
-    "name": "NARROW AWNING SS OPERATOR",
-    "category": "Operators SS",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Stainless Steel",
-      "Awning Operator",
-      "Narrow"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0453-085.jpg"
-    ],
-    "fp": {
-      "brightness": 17,
-      "whitePct": 2,
-      "darkPct": 67,
-      "edgeDensity": 12,
-      "hue": [
-        43,
-        57,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        27,
-        29,
-        21,
-        9,
-        38,
-        0,
-        0,
-        42,
-        0
-      ]
-    }
-  },
-  {
-    "id": 20,
-    "sku": "CL02-2054-000",
-    "name": "Casement Strike White",
-    "category": "Strike & Guide",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "White"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CL02-2054-000.jpeg"
-    ],
-    "fp": {
-      "brightness": 95,
-      "whitePct": 87,
-      "darkPct": 0,
-      "edgeDensity": 4,
-      "hue": [
-        66,
-        34,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "zones": [
-        98,
-        95,
-        95,
-        93,
-        91,
-        92,
-        97,
-        93,
-        94
-      ]
-    }
   }
 ]
