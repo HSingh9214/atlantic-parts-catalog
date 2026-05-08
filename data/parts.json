@@ -9,8 +9,8 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0505-085 A.jpg", "IMAGES/CO11-0505-085 B.jpg"]
-},
-    {
+  },
+  {
     "id": 2,
     "sku": "CO11-0506-085",
     "name": "RH Bracket Facemount / Casement",
@@ -20,7 +20,7 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0506-085 A.jpg", "IMAGES/CO11-0506-085 B.jpg"]
-},
+  },
   {
     "id": 3,
     "sku": "CO11-0510",
@@ -32,28 +32,28 @@
     "discontinued": false,
     "image": ["IMAGES/CO11-0510 A.jpg", "IMAGES/CO11-0510 B.jpg"]
   },
-    {
+  {
     "id": 4,
     "sku": "CO11-0555-085",
     "name": "LH Bracket Facemount / Casement SS",
     "category": "Operators Accessories",
-    "tags": ["Hardware", "Casement", "Sash Bracket", "Lefthand", "Stainless Steel","27mm"],
+    "tags": ["Hardware", "Casement", "Sash Bracket", "Lefthand", "Stainless Steel", "27mm"],
     "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0555-085 A.jpg", "IMAGES/CO11-0555-085 B.jpg"]
-},
-   {
+  },
+  {
     "id": 5,
     "sku": "CO11-0556-085",
     "name": "RH Bracket Facemount / Casement SS",
     "category": "Operators Accessories",
-    "tags": ["Hardware", "Casement", "Sash Bracket", "Righthand", "Stainless Steel","27mm"],
+    "tags": ["Hardware", "Casement", "Sash Bracket", "Righthand", "Stainless Steel", "27mm"],
     "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0556-085 A.jpg", "IMAGES/CO11-0556-085 B.jpg"]
-},
+  },
   {
     "id": 6,
     "sku": "CO11-0702",
@@ -64,7 +64,7 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0702 A.jpg", "IMAGES/CO11-0702 B.jpg"]
-},
+  },
   {
     "id": 7,
     "sku": "CO11-0717",
@@ -75,8 +75,8 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0717 A.jpg", "IMAGES/CO11-0717 B.jpg"]
-},
-    {
+  },
+  {
     "id": 8,
     "sku": "CO11-0201-085",
     "name": "DUAL ARM Powder Coated LH",
@@ -86,8 +86,8 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0201-085.jpg"]
-},
-    {
+  },
+  {
     "id": 9,
     "sku": "CO11-0202-085",
     "name": "DUAL ARM Powder Coated RH",
@@ -97,8 +97,8 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0202-085.jpg"]
-},
-    {
+  },
+  {
     "id": 10,
     "sku": "CO11-0301-085",
     "name": "DYAD OPERATOR Powder Coated LH",
@@ -108,7 +108,7 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0301-085.jpg"]
-},
+  },
   {
     "id": 11,
     "sku": "CO11-0302-085",
@@ -119,8 +119,7 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0302-085.jpg"]
-},
-  
+  },
   {
     "id": 12,
     "sku": "CO11-0403-085",
@@ -131,8 +130,8 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0403-085.jpg"]
-},
-    {
+  },
+  {
     "id": 13,
     "sku": "CO11-0409-085",
     "name": "NARROW AWNING OPERATOR (REGULAR)",
@@ -142,7 +141,7 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0409-085.jpg"]
-}, 
+  },
   {
     "id": 14,
     "sku": "CO11-0251-085",
@@ -153,7 +152,7 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0251-085.jpg"]
-},
+  },
   {
     "id": 15,
     "sku": "CO11-0252-085",
@@ -164,7 +163,7 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0251-085.jpg"]
-},
+  },
   {
     "id": 16,
     "sku": "CO11-0351-085",
@@ -175,7 +174,7 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0351-085.jpg"]
-},
+  },
   {
     "id": 17,
     "sku": "CO11-0352-085",
@@ -186,7 +185,7 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0352-085.jpg"]
-},
+  },
   {
     "id": 18,
     "sku": "CO11-0459-085",
@@ -197,7 +196,7 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0459-085.jpg"]
-},
+  },
   {
     "id": 19,
     "sku": "CO11-0453-085",
@@ -208,7 +207,7 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CO11-0453-085.jpg"]
-},
+  },
   {
     "id": 20,
     "sku": "CL02-2054-000",
@@ -219,5 +218,5 @@
     "stock": "in_stock",
     "discontinued": false,
     "image": ["IMAGES/CL02-2054-000.jpg"]
-},
+  }
 ]
