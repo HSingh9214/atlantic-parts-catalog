@@ -5,21 +5,12 @@
     "name": "LH Bracket Facemount / Casement",
     "category": "Operators Accessories",
     "description": "",
-    "tags": [
-      "Hardware",
-      "Lefthand",
-      "Casement",
-      "Bracket",
-      "Silver",
-      "27mm"
-    ],
+    "tags": ["Hardware", "Lefthand", "Casement", "Bracket", "Silver", "27mm"],
     "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0505-085 A.jpg",
-      "IMAGES/CO11-0505-085 B.jpg"
-    ]
+    "image": ["IMAGES/CO11-0505-085 A.jpg", "IMAGES/CO11-0505-085 B.jpg"],
+    "fingerprint": []
   },
   {
     "id": 2,
@@ -27,21 +18,12 @@
     "name": "RH Bracket Facemount / Casement",
     "category": "Operators Accessories",
     "description": "",
-    "tags": [
-      "Hardware",
-      "Righthand",
-      "Casement",
-      "Bracket",
-      "Silver",
-      "27mm"
-    ],
+    "tags": ["Hardware", "Righthand", "Casement", "Bracket", "Silver", "27mm"],
     "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0506-085 A.jpg",
-      "IMAGES/CO11-0506-085 B.jpg"
-    ]
+    "image": ["IMAGES/CO11-0506-085 A.jpg", "IMAGES/CO11-0506-085 B.jpg"],
+    "fingerprint": []
   },
   {
     "id": 3,
@@ -49,20 +31,12 @@
     "name": "Narrow Awning Connector",
     "category": "Operators Accessories",
     "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Awning",
-      "Stainless Steel",
-      "Connector"
-    ],
+    "tags": ["Hardware", "Casement", "Awning", "Stainless Steel", "Connector"],
     "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0510 A.jpg",
-      "IMAGES/CO11-0510 B.jpg"
-    ]
+    "image": ["IMAGES/CO11-0510 A.jpg", "IMAGES/CO11-0510 B.jpg"],
+    "fingerprint": []
   },
   {
     "id": 4,
@@ -70,338 +44,8 @@
     "name": "LH Bracket Facemount / Casement SS",
     "category": "Operators Accessories",
     "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Sash Bracket",
-      "Lefthand",
-      "Stainless Steel",
-      "27mm"
-    ],
+    "tags": ["Hardware", "Casement", "Sash Bracket", "Lefthand", "Stainless Steel", "27mm"],
     "compatibility": "Casement",
     "stock": "in_stock",
     "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0555-085 A.jpg",
-      "IMAGES/CO11-0555-085 B.jpg"
-    ]
-  },
-  {
-    "id": 5,
-    "sku": "CO11-0556-085",
-    "name": "RH Bracket Facemount / Casement SS",
-    "category": "Operators Accessories",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Sash Bracket",
-      "Righthand",
-      "Stainless Steel",
-      "27mm"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0556-085 A.jpg",
-      "IMAGES/CO11-0556-085 B.jpg"
-    ]
-  },
-  {
-    "id": 6,
-    "sku": "CO11-0702",
-    "name": "Track Assembly Facemount (Large Dual)",
-    "category": "Operators Accessories",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Track Assembly",
-      "Aluminum",
-      "14.5 Extruded Face"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0702 A.jpg",
-      "IMAGES/CO11-0702 B.jpg"
-    ]
-  },
-  {
-    "id": 7,
-    "sku": "CO11-0717",
-    "name": "AWNING Track SS",
-    "category": "Operators Accessories",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Track",
-      "Stainless Steel",
-      "Small"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0717 A.jpg",
-      "IMAGES/CO11-0717 B.jpg"
-    ]
-  },
-  {
-    "id": 8,
-    "sku": "CO11-0201-085",
-    "name": "DUAL ARM Powder Coated LH",
-    "category": "Operators",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Silver",
-      "Lefthand"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0201-085.jpg"
-    ]
-  },
-  {
-    "id": 9,
-    "sku": "CO11-0202-085",
-    "name": "DUAL ARM Powder Coated RH",
-    "category": "Operators",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Silver",
-      "Righthand"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0202-085.jpg"
-    ]
-  },
-  {
-    "id": 10,
-    "sku": "CO11-0301-085",
-    "name": "DYAD OPERATOR Powder Coated LH",
-    "category": "Operators",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Silver",
-      "Lefthand",
-      "Dyad"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0301-085.jpg"
-    ]
-  },
-  {
-    "id": 11,
-    "sku": "CO11-0302-085",
-    "name": "DYAD OPERATOR Powder Coated RH",
-    "category": "Operators",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Silver",
-      "Righthand",
-      "Dyad"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0302-085.jpg"
-    ]
-  },
-  {
-    "id": 12,
-    "sku": "CO11-0403-085",
-    "name": "NARROW AWNING OPERATOR (REGULAR)",
-    "category": "Operators",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Silver",
-      "Awning",
-      "Narrow"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0403-085.jpg"
-    ]
-  },
-  {
-    "id": 13,
-    "sku": "CO11-0409-085",
-    "name": "NARROW AWNING OPERATOR (REGULAR)",
-    "category": "Operators",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Awning",
-      "Scissor Arm"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0409-085.jpg"
-    ]
-  },
-  {
-    "id": 14,
-    "sku": "CO11-0251-085",
-    "name": "DUAL ARM SS LH",
-    "category": "Operators SS",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Lefthand",
-      "Stainless Steel",
-      "Dual Arm"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0251-085.jpg"
-    ]
-  },
-  {
-    "id": 15,
-    "sku": "CO11-0252-085",
-    "name": "DUAL ARM SS RH",
-    "category": "Operators SS",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Righthand",
-      "Stainless Steel",
-      "Dual Arm"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0251-085.jpg"
-    ]
-  },
-  {
-    "id": 16,
-    "sku": "CO11-0351-085",
-    "name": "DYAD OPERATOR SS LH",
-    "category": "Operators SS",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Lefthand",
-      "Stainless Steel",
-      "Dyad"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0351-085.jpg"
-    ]
-  },
-  {
-    "id": 17,
-    "sku": "CO11-0352-085",
-    "name": "DYAD OPERATOR SS RH",
-    "category": "Operators SS",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Righthand",
-      "Stainless Steel",
-      "Dyad"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0352-085.jpg"
-    ]
-  },
-  {
-    "id": 18,
-    "sku": "CO11-0459-085",
-    "name": "AWNING SS OPERATOR",
-    "category": "Operators SS",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Stainless Steel",
-      "Awning Scissor Arm"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0459-085.jpg"
-    ]
-  },
-  {
-    "id": 19,
-    "sku": "CO11-0453-085",
-    "name": "NARROW AWNING SS OPERATOR",
-    "category": "Operators SS",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "Stainless Steel",
-      "Awning Operator",
-      "Narrow"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CO11-0453-085.jpg"
-    ]
-  },
-  {
-    "id": 20,
-    "sku": "CL02-2054-000",
-    "name": "Casement Strike White",
-    "category": "Strike & Guide",
-    "description": "",
-    "tags": [
-      "Hardware",
-      "Casement",
-      "White"
-    ],
-    "compatibility": "Casement",
-    "stock": "in_stock",
-    "discontinued": false,
-    "image": [
-      "IMAGES/CL02-2054-000.jpg"
-    ]
-  }
-]
+    "image": ["IMAGES/CO11
