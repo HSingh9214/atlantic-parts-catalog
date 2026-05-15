@@ -1,336 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AW Parts — CLIP Embedding Generator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--ink:#1a1c23;--surface:#f5f4f0;--card:#fff;--border:#e4e2db;--accent:#d45c2a;--success:#1f9e5c;--warn:#c47a0a;--danger:#c42a2a;--text2:#5c5f70;--text3:#9194a3}
-    body{font-family:'Instrument Sans',sans-serif;background:var(--surface);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased}
-    header{background:var(--ink);padding:0 32px;height:56px;display:flex;align-items:center;gap:14px;border-bottom:3px solid var(--accent)}
-    .logo-mark{width:32px;height:32px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:#fff}
-    .logo-text{font-family:'Syne',sans-serif;font-size:13px;color:#fff;line-height:1.2}
-    .logo-text span{display:block;font-size:9px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:1px}
-    .page{max-width:900px;margin:0 auto;padding:40px 24px}
-    h1{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;margin-bottom:8px}
-    .subtitle{color:var(--text2);font-size:15px;margin-bottom:32px;line-height:1.5}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
-    .step{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
-    .step-num{font-family:'Syne',sans-serif;font-size:11px;font-weight:800;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
-    .step h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px}
-    .step p{font-size:13px;color:var(--text2);line-height:1.5}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:20px}
-    .card-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-    .info-box{background:#e8f7ef;border:1px solid rgba(31,158,92,0.25);border-radius:10px;padding:14px 16px;font-size:13px;color:#0d5c35;margin-bottom:20px;line-height:1.6}
-    .info-box strong{display:block;margin-bottom:4px;font-size:14px}
-    .btn{font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;padding:11px 24px;border-radius:10px;cursor:pointer;border:none;transition:all 0.15s}
-    .btn-primary{background:var(--ink);color:#fff}
-    .btn-primary:hover:not(:disabled){background:var(--accent)}
-    .btn-primary:disabled{opacity:0.4;cursor:not-allowed}
-    .btn-success{background:var(--success);color:#fff}
-    .btn-outline{background:none;border:1.5px solid var(--border);color:var(--ink)}
-    .btn-outline:hover{border-color:var(--ink)}
-    .input-row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:16px}
-    .input-group{display:flex;flex-direction:column;gap:5px}
-    .input-group label{font-size:12px;color:var(--text3)}
-    .input-group input{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-family:'Instrument Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;min-width:260px}
-    .input-group input:focus{border-color:var(--accent)}
-    .progress-wrap{margin-top:16px}
-    .progress-bar-bg{height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin-bottom:8px}
-    .progress-bar-fill{height:100%;background:var(--accent);border-radius:4px;transition:width 0.4s;width:0%}
-    .progress-label{font-size:13px;color:var(--text2)}
-    .stat-row{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap}
-    .stat{text-align:center;background:var(--surface);border-radius:10px;padding:12px 20px;flex:1;min-width:100px}
-    .stat-val{font-family:'Syne',sans-serif;font-size:24px;font-weight:800}
-    .stat-label{font-size:11px;color:var(--text3);margin-top:2px}
-    .part-list{display:flex;flex-direction:column;gap:6px;max-height:360px;overflow-y:auto;margin-top:12px}
-    .part-row{display:flex;align-items:center;gap:12px;padding:8px 12px;background:var(--surface);border-radius:8px;font-size:13px}
-    .part-thumb{width:40px;height:40px;object-fit:cover;border-radius:6px;background:#eee;flex-shrink:0}
-    .part-name{flex:1;font-weight:500;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .part-sku{font-size:11px;color:var(--text3);flex-shrink:0}
-    .part-imgs{font-size:11px;color:var(--text3);flex-shrink:0}
-    .part-status{font-size:11px;padding:2px 8px;border-radius:10px;flex-shrink:0}
-    .s-done{background:#e8f7ef;color:var(--success)}
-    .s-pending{background:#fef5e4;color:var(--warn)}
-    .s-error{background:#fce8e8;color:var(--danger)}
-    .s-skip{background:#f0f0f0;color:var(--text3)}
-    .output-area{background:#1a1c23;color:#a8d5e2;font-family:'Courier New',monospace;font-size:11px;padding:16px;border-radius:10px;max-height:180px;overflow-y:auto;white-space:pre-wrap;word-break:break-all;margin-top:12px;line-height:1.6}
-    .copy-row{display:flex;gap:10px;margin-top:12px;align-items:center;flex-wrap:wrap}
-    .copy-note{font-size:12px;color:var(--text3)}
-    .test-section{margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
-    .test-title{font-size:13px;font-weight:600;margin-bottom:8px;color:var(--text2)}
-    @media(max-width:640px){.steps{grid-template-columns:1fr}}
-  </style>
-</head>
-<body>
-<header>
-  <div class="logo-mark">AW</div>
-  <div class="logo-text">Atlantic Windows <span>CLIP Embedding Generator</span></div>
-</header>
-
-<div class="page">
-  <h1>CLIP Embedding Generator</h1>
-  <p class="subtitle">Generates real AI visual embeddings for every catalog image using your Hugging Face CLIP model.<br/>Run this once whenever you add new parts — then replace <code>data/parts.json</code> on GitHub.</p>
-
-  <div class="steps">
-    <div class="step"><div class="step-num">Step 1</div><h3>Enter your Space URL</h3><p>Paste your Hugging Face Space URL below. It should be running (green dot on HF).</p></div>
-    <div class="step"><div class="step-num">Step 2</div><h3>Generate</h3><p>Click Generate. Each part image is sent to CLIP which returns a 512-number embedding vector.</p></div>
-    <div class="step"><div class="step-num">Step 3</div><h3>Download & upload</h3><p>Download the new <code>parts.json</code> and replace it on GitHub. Visual matching is now fully powered by CLIP.</p></div>
-  </div>
-
-  <div class="info-box">
-    <strong>✓ Using real CLIP embeddings (OpenAI ViT-B/32)</strong>
-    This is the same model used in professional visual search systems. Results work across different angles, lighting conditions, and photo quality — unlike pixel-based matching.
-  </div>
-
-  <div class="card">
-    <div class="card-title">⚙ Configuration</div>
-    <div class="input-row">
-      <div class="input-group" style="flex:1">
-        <label>Hugging Face Space URL</label>
-        <input id="hfUrl" value="https://chotasingh-aw-clip-matcher.hf.space" placeholder="https://yourname-aw-clip-matcher.hf.space"/>
-      </div>
-      <div class="input-group">
-        <label>parts.json path</label>
-        <input id="jsonPath" value="data/parts.json" style="min-width:160px"/>
-      </div>
-    </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <button class="btn btn-primary" id="runBtn" onclick="run()">Generate CLIP Embeddings</button>
-      <button class="btn btn-outline" onclick="testConnection()">Test Connection</button>
-    </div>
-    <div id="testResult" style="margin-top:10px;font-size:13px;display:none"></div>
-    <div class="progress-wrap" id="progressWrap" style="display:none">
-      <div style="margin-bottom:8px"></div>
-      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
-      <div class="progress-label" id="progressLabel">Starting…</div>
-    </div>
-    <div class="stat-row" id="statRow" style="display:none">
-      <div class="stat"><div class="stat-val" id="statDone">0</div><div class="stat-label">Embedded</div></div>
-      <div class="stat"><div class="stat-val" id="statImgs">0</div><div class="stat-label">Images processed</div></div>
-      <div class="stat"><div class="stat-val" id="statErr">0</div><div class="stat-label">Errors</div></div>
-      <div class="stat"><div class="stat-val" id="statTotal">0</div><div class="stat-label">Total parts</div></div>
-    </div>
-  </div>
-
-  <div class="card" id="partListCard" style="display:none">
-    <div class="card-title">📋 Parts Progress</div>
-    <div class="part-list" id="partList"></div>
-  </div>
-
-  <div class="card" id="outputCard" style="display:none">
-    <div class="card-title">✅ Done — Download and replace your parts.json on GitHub</div>
-    <div class="output-area" id="outputArea">Generating…</div>
-    <div class="copy-row">
-      <button class="btn btn-success" onclick="downloadOutput()">⬇ Download parts.json</button>
-      <button class="btn btn-outline" onclick="copyOutput()">📋 Copy to clipboard</button>
-      <span class="copy-note" id="copyNote"></span>
-    </div>
-    <div class="test-section">
-      <div class="test-title">Quick accuracy test — upload a part photo to see CLIP matches:</div>
-      <input type="file" id="testFile" accept="image/*" onchange="testMatch(this)" style="font-size:13px"/>
-      <div id="testMatches" style="margin-top:10px"></div>
-    </div>
-  </div>
-</div>
-
 <script>
-let allParts = [];
-let outputData = [];
-
-// ── GET CLIP EMBEDDING FROM HF SPACE ─────────────────────────────────
-async function getClipEmbedding(imageDataUrl, hfBase) {
-  // Convert dataUrl to blob for upload
-  const res = await fetch(imageDataUrl);
-  const blob = await res.blob();
-
-  // Use Gradio API format
-  const formData = new FormData();
-  formData.append('files', blob, 'image.jpg');
-
-  // Upload image first
-  const uploadResp = await fetch(`${hfBase}/upload`, {
-    method: 'POST',
-    body: formData
-  });
-  const uploadData = await uploadResp.json();
-  const filePath = uploadData[0];
-
-  // Call predict
-  const predictResp = await fetch(`${hfBase}/run/predict`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ data: [{ path: filePath }] })
-  });
-  const predictData = await predictResp.json();
-  const result = JSON.parse(predictData.data[0]);
-  return result.embedding; // 512-dim float array
-}
-
-// ── TEST CONNECTION ───────────────────────────────────────────────────
-async function testConnection() {
-  const hfBase = document.getElementById('hfUrl').value.replace(/\/$/, '');
-  const el = document.getElementById('testResult');
-  el.style.display = '';
-  el.style.color = 'var(--text2)';
-  el.textContent = '⏳ Testing connection to Hugging Face Space…';
-  try {
-    const resp = await fetch(`${hfBase}/info`, { method: 'GET' });
-    if (resp.ok) {
-      el.style.color = 'var(--success)';
-      el.textContent = '✓ Connected! Space is running and ready.';
-    } else {
-      throw new Error('Status ' + resp.status);
-    }
-  } catch(e) {
-    // Try alternate check
-    try {
-      const resp2 = await fetch(`${hfBase}/`);
-      if (resp2.ok) {
-        el.style.color = 'var(--success)';
-        el.textContent = '✓ Space is reachable and running.';
-        return;
-      }
-    } catch {}
-    el.style.color = 'var(--danger)';
-    el.textContent = '✗ Could not reach Space. Make sure it is Running (green dot on Hugging Face).';
-  }
-}
-
-// ── LOAD PARTS.JSON ───────────────────────────────────────────────────
-async function loadParts() {
-  const path = document.getElementById('jsonPath').value;
-  const r = await fetch(path + '?t=' + Date.now());
-  if (!r.ok) throw new Error('Could not load ' + path);
-  return await r.json();
-}
-
-function getImages(p) {
-  if (!p.image) return [];
-  return Array.isArray(p.image) ? p.image : [p.image];
-}
-
-// ── IMAGE URL TO DATA URL ─────────────────────────────────────────────
-async function urlToDataUrl(url) {
-  const resp = await fetch(url + '?t=' + Date.now());
-  const blob = await resp.blob();
-  return new Promise((res, rej) => {
-    const reader = new FileReader();
-    reader.onload = e => res(e.target.result);
-    reader.onerror = rej;
-    reader.readAsDataURL(blob);
-  });
-}
-
-// ── COSINE SIMILARITY ─────────────────────────────────────────────────
-function cosine(a, b) {
-  let dot = 0, ma = 0, mb = 0;
-  for (let i = 0; i < a.length; i++) { dot += a[i]*b[i]; ma += a[i]*a[i]; mb += b[i]*b[i]; }
-  return dot / (Math.sqrt(ma) * Math.sqrt(mb));
-}
-
-// ── MAIN GENERATOR ────────────────────────────────────────────────────
-async function run() {
-  const hfBase = document.getElementById('hfUrl').value.replace(/\/$/, '');
-  document.getElementById('runBtn').disabled = true;
-  document.getElementById('progressWrap').style.display = '';
-  document.getElementById('statRow').style.display = '';
-  document.getElementById('outputCard').style.display = 'none';
-  document.getElementById('partListCard').style.display = '';
-
-  try { allParts = await loadParts(); }
-  catch(e) { alert('Could not load parts.json: ' + e.message); document.getElementById('runBtn').disabled = false; return; }
-
-  outputData = [];
-  let done = 0, errors = 0, totalImgs = 0;
-  const rows = allParts.map(p => ({ p, status: 'pending' }));
-  document.getElementById('statTotal').textContent = allParts.length;
-  renderPartList(rows);
-
-  for (let i = 0; i < allParts.length; i++) {
-    const part = { ...allParts[i] };
-    const imageUrls = getImages(part);
-    rows[i].status = 'pending';
-    renderPartList(rows);
-
-    if (imageUrls.length === 0) {
-      rows[i].status = 'skip';
-      outputData.push(part);
-      continue;
-    }
-
-    const embeddings = [];
-    let anyError = false;
-
-    for (const imgUrl of imageUrls) {
-      try {
-        document.getElementById('progressLabel').textContent =
-          `Part ${i+1}/${allParts.length}: ${part.name} — fetching image…`;
-        const dataUrl = await urlToDataUrl(imgUrl);
-
-        document.getElementById('progressLabel').textContent =
-          `Part ${i+1}/${allParts.length}: ${part.name} — getting CLIP embedding…`;
-        const embedding = await getClipEmbedding(dataUrl, hfBase);
-        embeddings.push(embedding);
-        totalImgs++;
-        document.getElementById('statImgs').textContent = totalImgs;
-      } catch(e) {
-        console.error('Embedding error for', imgUrl, e);
-        anyError = true;
-      }
-    }
-
-    if (embeddings.length > 0) {
-      part.clip = embeddings[0];        // primary embedding
-      if (embeddings.length > 1) part.clips = embeddings; // all embeddings
-      // Remove old pixel fingerprints if any
-      delete part.fp; delete part.fps;
-      done++;
-      rows[i].status = 'done';
-    } else {
-      errors++;
-      rows[i].status = 'error';
-    }
-
-    outputData.push(part);
-
-    const pct = Math.round(((i+1) / allParts.length) * 100);
-    document.getElementById('progressFill').style.width = pct + '%';
-    document.getElementById('statDone').textContent = done;
-    document.getElementById('statErr').textContent = errors;
-    renderPartList(rows);
-
-    await new Promise(r => setTimeout(r, 100));
-  }
-
-  document.getElementById('progressLabel').textContent =
-    `✅ Complete! ${done} parts embedded, ${totalImgs} images processed, ${errors} errors.`;
-  document.getElementById('runBtn').disabled = false;
-
-  const jsonStr = JSON.stringify(outputData, null, 2);
-  document.getElementById('outputArea').textContent = jsonStr.substring(0, 2000) + (jsonStr.length > 2000 ? '\n\n… (truncated for display, full file will download correctly)' : '');
-  document.getElementById('outputCard').style.display = '';
-}
-
-// ── RENDER PART LIST ──────────────────────────────────────────────────
-function renderPartList(rows) {
-  document.getElementById('partList').innerHTML = rows.map(({p, status}) => {
-    const ii = getImages(p);
-    const statusMap = { done:'s-done', pending:'s-pending', error:'s-error', skip:'s-skip' };
-    const labelMap  = { done:'✓ Done', pending:'Pending', error:'✗ Error', skip:'No image' };
-    return `<div class="part-row">
-      <img class="part-thumb" src="${ii[0]||''}" onerror="this.style.opacity=0.1"/>
-      <div class="part-name">${p.name}</div>
-      <div class="part-sku">${p.sku}</div>
-      <div class="part-imgs">${ii.length} img${ii.length!==1?'s':''}</div>
-      <span class="part-status ${statusMap[status]||'s-pending'}">${labelMap[status]||status}</span>
-    </div>`;
-  }).join('');
-}
-
-// ── DOWNLOAD ─────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────
+// SAVE / COPY OUTPUT
+// ─────────────────────────────────────────────
 function downloadOutput() {
   const json = JSON.stringify(outputData, null, 2);
   const a = document.createElement('a');
@@ -338,6 +9,7 @@ function downloadOutput() {
   a.download = 'parts.json';
   a.click();
 }
+
 function copyOutput() {
   navigator.clipboard.writeText(JSON.stringify(outputData, null, 2)).then(() => {
     document.getElementById('copyNote').textContent = '✓ Copied!';
@@ -345,45 +17,58 @@ function copyOutput() {
   });
 }
 
-// ── TEST MATCH AFTER GENERATION ───────────────────────────────────────
+// ─────────────────────────────────────────────
+// TEST MATCH AFTER GENERATION
+// ─────────────────────────────────────────────
 async function testMatch(inp) {
   if (!inp.files[0] || !outputData.length) return;
+
   const hfBase = document.getElementById('hfUrl').value.replace(/\/$/, '');
   const el = document.getElementById('testMatches');
+
   el.innerHTML = '<div style="color:var(--text2);font-size:13px">⏳ Getting CLIP embedding for test image…</div>';
 
   try {
     const reader = new FileReader();
+
     reader.onload = async (e) => {
       const dataUrl = e.target.result;
+
+      // Get embedding for uploaded test image
       const queryEmb = await getClipEmbedding(dataUrl, hfBase);
+
+      // Match against products using YOUR JSON structure
       const scored = outputData
-        .filter(p => p.clip)
+        .filter(p => Array.isArray(p.fingerprint) && p.fingerprint.length > 0)
         .map(p => {
-          const allEmbs = p.clips || [p.clip];
-          const best = Math.max(...allEmbs.map(emb => cosine(queryEmb, emb)));
+          const best = cosine(queryEmb, p.fingerprint);
           return { ...p, score: best };
         })
         .sort((a, b) => b.score - a.score)
         .slice(0, 5);
 
       const imgs = p => Array.isArray(p.image) ? p.image : (p.image ? [p.image] : []);
-      el.innerHTML = `<div style="font-size:12px;color:var(--text3);margin-bottom:8px">Top matches using CLIP:</div>` +
-        scored.map((p,i) => `
+
+      el.innerHTML =
+        `<div style="font-size:12px;color:var(--text3);margin-bottom:8px">Top matches using CLIP:</div>` +
+        scored.map((p, i) => `
           <div style="display:flex;align-items:center;gap:10px;padding:8px;background:var(--surface);border-radius:8px;margin-bottom:6px;${i===0?'border:1px solid rgba(212,92,42,0.3)':''}">
-            <img src="${imgs(p)[0]||''}" style="width:40px;height:40px;object-fit:cover;border-radius:6px"/>
+            <img src="${imgs(p)[0] || ''}" style="width:40px;height:40px;object-fit:cover;border-radius:6px"/>
             <div style="flex:1;min-width:0">
               <div style="font-size:13px;font-weight:600">${p.name}</div>
               <div style="font-size:11px;color:var(--text3)">${p.sku} · ${p.category}</div>
             </div>
-            <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--accent)">${Math.round(p.score*100)}%</div>
-          </div>`).join('');
+            <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--accent)">
+              ${Math.round(p.score * 100)}%
+            </div>
+          </div>
+        `).join('');
     };
+
     reader.readAsDataURL(inp.files[0]);
-  } catch(e) {
+
+  } catch (e) {
     el.innerHTML = `<div style="color:var(--danger);font-size:13px">Error: ${e.message}</div>`;
   }
 }
 </script>
-</body>
-</html>
